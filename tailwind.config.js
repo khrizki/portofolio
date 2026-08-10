@@ -1,36 +1,34 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
       colors: {
-        // Dark theme colors from existing styles
         background: {
-          primary: '#0a0a0f',
-          secondary: '#12121a',
-          tertiary: '#1a1a25',
-          card: '#16161f',
+          primary: 'var(--bg-primary)',
+          secondary: 'var(--bg-secondary)',
+          tertiary: 'var(--bg-tertiary)',
+          card: 'var(--bg-card)',
         },
         text: {
-          primary: '#e4e4e7',
-          secondary: '#a1a1aa',
-          muted: '#71717a',
+          primary: 'var(--text-primary)',
+          secondary: 'var(--text-secondary)',
+          muted: 'var(--text-muted)',
         },
         accent: {
-          primary: '#6366f1',
-          secondary: '#8b5cf6',
+          primary: 'var(--accent-primary)',
+          secondary: 'var(--accent-secondary)',
         },
         border: {
-          DEFAULT: '#27272a',
-          hover: '#3f3f46',
+          DEFAULT: 'var(--border-color)',
+          hover: 'var(--border-hover)',
         },
-        success: '#10b981',
-        warning: '#f59e0b',
-        error: '#ef4444',
+        success: 'var(--success)',
+        warning: 'var(--warning)',
+        error: 'var(--error)',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
