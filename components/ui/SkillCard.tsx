@@ -41,10 +41,10 @@ export default function SkillCard({ skill, index }: SkillCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.05 }}
-      className="bg-background-card border border-border rounded-2xl p-6 text-center hover:border-accent-primary hover:-translate-y-1 hover:shadow-glow transition-all duration-300 group"
+      className="surface-card rounded-2xl p-6 text-center hover:border-accent-primary hover:-translate-y-1 hover:shadow-glow transition-all duration-300 group"
     >
       {/* Icon */}
-      <div className="w-16 h-16 mx-auto mb-4 bg-background-tertiary rounded-2xl flex items-center justify-center text-2xl">
+      <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-accent-primary/15 to-accent-secondary/15 border border-white/5 rounded-2xl flex items-center justify-center text-2xl group-hover:rotate-6 transition-transform">
         <i className={`${skill.icon} gradient-text`} />
       </div>
 

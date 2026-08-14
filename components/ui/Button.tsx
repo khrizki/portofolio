@@ -25,13 +25,13 @@ export default function Button({
   onClick,
 }: ButtonProps) {
   const baseStyles =
-    'inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-sm transition-all duration-300';
+    'group inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full font-bold text-sm tracking-[.01em] transition-all duration-300';
 
   const variants = {
     primary:
-      'bg-gradient-to-r from-accent-primary to-accent-secondary text-white shadow-lg hover:shadow-glow hover:-translate-y-0.5',
+      'bg-gradient-to-r from-accent-primary to-accent-secondary text-white shadow-lg shadow-indigo-950/30 hover:shadow-glow hover:-translate-y-0.5',
     secondary:
-      'bg-background-card text-text-primary border border-border hover:border-border-hover hover:bg-background-tertiary',
+      'bg-background-card/75 text-text-primary border border-border hover:border-border-hover hover:bg-background-tertiary hover:-translate-y-0.5',
     outline:
       'bg-transparent text-accent-primary border border-accent-primary hover:bg-accent-primary hover:text-white',
   };

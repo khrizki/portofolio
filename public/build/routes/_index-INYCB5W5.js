@@ -8,7 +8,7 @@ import {
 import "/build/_shared/chunk-CZNGAJO4.js";
 import {
   useLoaderData
-} from "/build/_shared/chunk-HOMJSFGT.js";
+} from "/build/_shared/chunk-TEVHQX2B.js";
 import {
   require_jsx_dev_runtime
 } from "/build/_shared/chunk-CBDF6H27.js";
@@ -51,10 +51,10 @@ function Button({
   disabled = false,
   onClick
 }) {
-  const baseStyles = "inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-sm transition-all duration-300";
+  const baseStyles = "group inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full font-bold text-sm tracking-[.01em] transition-all duration-300";
   const variants = {
-    primary: "bg-gradient-to-r from-accent-primary to-accent-secondary text-white shadow-lg hover:shadow-glow hover:-translate-y-0.5",
-    secondary: "bg-background-card text-text-primary border border-border hover:border-border-hover hover:bg-background-tertiary",
+    primary: "bg-gradient-to-r from-accent-primary to-accent-secondary text-white shadow-lg shadow-indigo-950/30 hover:shadow-glow hover:-translate-y-0.5",
+    secondary: "bg-background-card/75 text-text-primary border border-border hover:border-border-hover hover:bg-background-tertiary hover:-translate-y-0.5",
     outline: "bg-transparent text-accent-primary border border-accent-primary hover:bg-accent-primary hover:text-white"
   };
   const buttonContent = /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_jsx_dev_runtime.Fragment, { children: [
@@ -133,7 +133,7 @@ function Hero() {
     setCopied(true);
     setTimeout(() => setCopied(false), 2e3);
   };
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("section", { id: "home", className: "relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden bg-background-primary", children: [
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("section", { id: "home", className: "section-shell relative min-h-screen flex items-center pt-28 pb-16 bg-background-primary", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "absolute inset-0 -z-10 overflow-hidden pointer-events-none", children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(
         motion.div,
@@ -209,7 +209,7 @@ function Hero() {
           initial: { opacity: 0 },
           animate: { opacity: 1 },
           transition: { duration: 0.8 },
-          className: "lg:col-span-7 space-y-8",
+          className: "lg:col-span-7 space-y-8 lg:pr-8",
           children: [
             /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(
               motion.div,
@@ -218,7 +218,7 @@ function Hero() {
                 animate: { opacity: 1, y: 0 },
                 transition: { duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] },
                 className: "inline-flex",
-                children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 backdrop-blur-md", children: [
+                children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "eyebrow", children: [
                   /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { className: "relative flex h-2.5 w-2.5", children: [
                     /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { className: "animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" }, void 0, false, {
                       fileName: "components/sections/Hero.tsx",
@@ -235,7 +235,7 @@ function Hero() {
                     lineNumber: 72,
                     columnNumber: 17
                   }, this),
-                  /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { className: "text-xs font-medium text-purple-300 tracking-wide uppercase", children: hero.subtitle || "Available for projects" }, void 0, false, {
+                  /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { children: hero.subtitle || "Available for projects" }, void 0, false, {
                     fileName: "components/sections/Hero.tsx",
                     lineNumber: 76,
                     columnNumber: 17
@@ -263,12 +263,12 @@ function Hero() {
                 transition: { duration: 0.6, delay: 0.15, ease: [0.22, 1, 0.36, 1] },
                 className: "space-y-3",
                 children: [
-                  /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("h2", { className: "text-xl md:text-2xl font-medium text-text-secondary", children: "Halo, Saya" }, void 0, false, {
+                  /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("h2", { className: "text-lg md:text-xl font-semibold text-text-secondary tracking-wide", children: "Halo, saya" }, void 0, false, {
                     fileName: "components/sections/Hero.tsx",
                     lineNumber: 89,
                     columnNumber: 15
                   }, this),
-                  /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("h1", { className: "text-5xl sm:text-6xl lg:text-7xl font-extrabold text-text-primary tracking-tight leading-[1.1]", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { className: "bg-clip-text text-transparent bg-gradient-to-r from-white via-purple-200 to-purple-400", children: hero.name }, void 0, false, {
+                  /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("h1", { className: "text-5xl sm:text-6xl lg:text-7xl font-extrabold text-text-primary tracking-[-.06em] leading-[1.02]", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { className: "gradient-text", children: hero.name }, void 0, false, {
                     fileName: "components/sections/Hero.tsx",
                     lineNumber: 93,
                     columnNumber: 17
@@ -277,7 +277,7 @@ function Hero() {
                     lineNumber: 92,
                     columnNumber: 15
                   }, this),
-                  /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("p", { className: "text-3xl sm:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-400 to-indigo-400", children: hero.title }, void 0, false, {
+                  /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("p", { className: "text-2xl sm:text-3xl font-bold text-text-primary", children: hero.title }, void 0, false, {
                     fileName: "components/sections/Hero.tsx",
                     lineNumber: 97,
                     columnNumber: 15
@@ -299,7 +299,7 @@ function Hero() {
                 initial: { opacity: 0, y: 25 },
                 animate: { opacity: 1, y: 0 },
                 transition: { duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] },
-                className: "text-text-secondary text-lg max-w-xl leading-relaxed font-normal",
+                className: "text-text-secondary text-base sm:text-lg max-w-xl leading-8 font-medium",
                 children: hero.description
               },
               void 0,
@@ -358,7 +358,7 @@ function Hero() {
                 initial: { opacity: 0, y: 25 },
                 animate: { opacity: 1, y: 0 },
                 transition: { duration: 0.6, delay: 0.4, ease: [0.22, 1, 0.36, 1] },
-                className: "pt-4 flex items-center gap-4",
+                className: "pt-3 flex items-center gap-3",
                 children: [
                   /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { className: "text-xs uppercase tracking-widest text-text-muted font-semibold mr-2", children: "Hubungkan:" }, void 0, false, {
                     fileName: "components/sections/Hero.tsx",
@@ -378,7 +378,7 @@ function Hero() {
                       "aria-label": social.label,
                       whileHover: { y: -4, scale: 1.1 },
                       whileTap: { scale: 0.95 },
-                      className: "w-11 h-11 bg-background-card/80 backdrop-blur-md border border-border/80 rounded-xl flex items-center justify-center text-text-secondary hover:text-white hover:border-purple-500/50 hover:bg-purple-500/10 hover:shadow-[0_0_20px_rgba(168,85,247,0.3)] transition-all duration-300",
+                      className: "w-10 h-10 surface-card rounded-full flex items-center justify-center text-text-secondary hover:text-white hover:border-accent-primary hover:bg-accent-primary hover:shadow-glow transition-all duration-300",
                       children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("i", { className: `${social.icon} text-lg` }, void 0, false, {
                         fileName: "components/sections/Hero.tsx",
                         lineNumber: 157,
@@ -424,12 +424,12 @@ function Hero() {
           transition: { duration: 0.8, delay: 0.3, ease: "easeOut" },
           className: "lg:col-span-5 hidden lg:block",
           children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "relative group", children: [
-            /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "absolute -inset-1 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl blur-lg opacity-30 group-hover:opacity-50 transition duration-500" }, void 0, false, {
+            /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "absolute -inset-1 bg-gradient-to-r from-accent-primary to-accent-secondary rounded-[1.4rem] blur-lg opacity-25 group-hover:opacity-50 transition duration-500" }, void 0, false, {
               fileName: "components/sections/Hero.tsx",
               lineNumber: 172,
               columnNumber: 15
             }, this),
-            /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "relative bg-zinc-950/90 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden shadow-2xl", children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "relative bg-[#0d1324]/95 backdrop-blur-xl border border-white/10 rounded-[1.3rem] overflow-hidden shadow-2xl", children: [
               /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "flex items-center justify-between px-4 py-3 bg-white/[0.03] border-b border-white/10 select-none", children: [
                 /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "flex items-center gap-2", children: [
                   /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { className: "w-3 h-3 rounded-full bg-red-500/80 inline-block" }, void 0, false, {
@@ -457,7 +457,7 @@ function Hero() {
                     "button",
                     {
                       onClick: () => setActiveTab("code"),
-                      className: `px-3 py-1 rounded-md transition-all ${activeTab === "code" ? "bg-purple-600 text-white font-medium shadow-sm" : "text-zinc-400 hover:text-white"}`,
+                      className: `px-3 py-1 rounded-md transition-all ${activeTab === "code" ? "bg-accent-primary text-white font-medium shadow-sm" : "text-zinc-400 hover:text-white"}`,
                       children: "developer.ts"
                     },
                     void 0,
@@ -473,7 +473,7 @@ function Hero() {
                     "button",
                     {
                       onClick: () => setActiveTab("terminal"),
-                      className: `px-3 py-1 rounded-md transition-all ${activeTab === "terminal" ? "bg-purple-600 text-white font-medium shadow-sm" : "text-zinc-400 hover:text-white"}`,
+                      className: `px-3 py-1 rounded-md transition-all ${activeTab === "terminal" ? "bg-accent-primary text-white font-medium shadow-sm" : "text-zinc-400 hover:text-white"}`,
                       children: "bash"
                     },
                     void 0,
@@ -796,15 +796,15 @@ function Hero() {
         animate: { opacity: 1, y: 0 },
         transition: { delay: 1, duration: 0.5 },
         children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { className: "text-[11px] font-medium uppercase tracking-widest text-text-muted group-hover:text-purple-400 transition-colors", children: "Scroll Down" }, void 0, false, {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { className: "text-[11px] font-bold uppercase tracking-[.16em] text-text-muted group-hover:text-accent-secondary transition-colors", children: "Scroll Down" }, void 0, false, {
             fileName: "components/sections/Hero.tsx",
             lineNumber: 299,
             columnNumber: 9
           }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "w-5 h-9 border-2 border-white/20 group-hover:border-purple-400/50 rounded-full flex justify-center p-1 transition-colors", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(
+          /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "w-5 h-9 border-2 border-white/20 group-hover:border-accent-secondary/50 rounded-full flex justify-center p-1 transition-colors", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(
             motion.div,
             {
-              className: "w-1 h-2 bg-purple-400 rounded-full",
+              className: "w-1 h-2 bg-accent-secondary rounded-full",
               animate: { y: [0, 12, 0] },
               transition: { duration: 1.8, repeat: Infinity, ease: "easeInOut" }
             },
@@ -7564,7 +7564,7 @@ function About() {
   const years = useCounter(stats.years);
   const projects = useCounter(stats.projects);
   const clients = useCounter(stats.clients);
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("section", { id: "about", className: "relative py-28 bg-background-secondary overflow-hidden", children: [
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("section", { id: "about", className: "section-shell relative py-28 bg-background-secondary", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { className: "absolute inset-0 pointer-events-none -z-10 overflow-hidden", children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { className: "absolute top-1/3 -left-20 w-[450px] h-[450px] bg-purple-600/15 rounded-full blur-[140px]" }, void 0, false, {
         fileName: "components/sections/About.tsx",
@@ -7596,7 +7596,7 @@ function About() {
           transition: { duration: 0.6 },
           className: "flex flex-col items-center text-center mb-16 space-y-4",
           children: [
-            /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { className: "inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-xs font-semibold tracking-widest uppercase backdrop-blur-md", children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { className: "eyebrow", children: [
               /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("i", { className: "fas fa-user-circle text-xs text-purple-400" }, void 0, false, {
                 fileName: "components/sections/About.tsx",
                 lineNumber: 35,
@@ -7612,9 +7612,9 @@ function About() {
               lineNumber: 34,
               columnNumber: 11
             }, this),
-            /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("h2", { className: "text-4xl sm:text-5xl lg:text-6xl font-extrabold text-text-primary tracking-tight", children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("h2", { className: "text-4xl sm:text-5xl lg:text-6xl font-extrabold text-text-primary tracking-[-.05em]", children: [
               "Tentang ",
-              /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("span", { className: "bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-400 to-indigo-400", children: "Saya" }, void 0, false, {
+              /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("span", { className: "gradient-text", children: "Saya" }, void 0, false, {
                 fileName: "components/sections/About.tsx",
                 lineNumber: 40,
                 columnNumber: 21
@@ -7672,7 +7672,7 @@ function About() {
                 },
                 this
               ),
-              /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { className: "relative w-full h-full bg-zinc-950/80 border border-white/10 rounded-3xl p-6 backdrop-blur-xl flex flex-col items-center justify-center shadow-2xl overflow-hidden group", children: [
+              /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { className: "surface-card relative w-full h-full rounded-3xl p-6 backdrop-blur-xl flex flex-col items-center justify-center shadow-2xl overflow-hidden group", children: [
                 /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { className: "w-28 h-28 sm:w-32 sm:h-32 rounded-2xl bg-gradient-to-br from-purple-500/20 to-indigo-500/20 border border-purple-500/30 flex items-center justify-center text-purple-400 text-5xl sm:text-6xl mb-4 group-hover:scale-110 transition-transform duration-500", children: /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("i", { className: "fas fa-terminal" }, void 0, false, {
                   fileName: "components/sections/About.tsx",
                   lineNumber: 76,
@@ -8036,9 +8036,9 @@ function SkillCard({ skill, index }) {
       whileInView: { opacity: 1, y: 0 },
       viewport: { once: true },
       transition: { duration: 0.5, delay: index * 0.05 },
-      className: "bg-background-card border border-border rounded-2xl p-6 text-center hover:border-accent-primary hover:-translate-y-1 hover:shadow-glow transition-all duration-300 group",
+      className: "surface-card rounded-2xl p-6 text-center hover:border-accent-primary hover:-translate-y-1 hover:shadow-glow transition-all duration-300 group",
       children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("div", { className: "w-16 h-16 mx-auto mb-4 bg-background-tertiary rounded-2xl flex items-center justify-center text-2xl", children: /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("i", { className: `${skill.icon} gradient-text` }, void 0, false, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("div", { className: "w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-accent-primary/15 to-accent-secondary/15 border border-white/5 rounded-2xl flex items-center justify-center text-2xl group-hover:rotate-6 transition-transform", children: /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("i", { className: `${skill.icon} gradient-text` }, void 0, false, {
           fileName: "components/ui/SkillCard.tsx",
           lineNumber: 48,
           columnNumber: 9
@@ -8127,7 +8127,7 @@ function Skills() {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.4 } }
   };
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("section", { id: "skills", className: "relative py-28 bg-background-primary overflow-hidden", children: [
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("section", { id: "skills", className: "section-shell relative py-28 bg-background-primary", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "absolute inset-0 pointer-events-none -z-10 overflow-hidden", children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "absolute top-1/4 -left-20 w-96 h-96 bg-purple-600/15 rounded-full blur-[120px]" }, void 0, false, {
         fileName: "components/sections/Skills.tsx",
@@ -8159,7 +8159,7 @@ function Skills() {
           transition: { duration: 0.6 },
           className: "flex flex-col items-center text-center mb-12 space-y-4",
           children: [
-            /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-xs font-semibold tracking-widest uppercase backdrop-blur-md", children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "eyebrow", children: [
               /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("i", { className: "fas fa-code text-xs text-purple-400" }, void 0, false, {
                 fileName: "components/sections/Skills.tsx",
                 lineNumber: 83,
@@ -8175,9 +8175,9 @@ function Skills() {
               lineNumber: 82,
               columnNumber: 11
             }, this),
-            /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("h2", { className: "text-4xl sm:text-5xl lg:text-6xl font-extrabold text-text-primary tracking-tight", children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("h2", { className: "text-4xl sm:text-5xl lg:text-6xl font-extrabold text-text-primary tracking-[-.05em]", children: [
               "Keahlian ",
-              /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("span", { className: "bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-400 to-indigo-400", children: "& Teknologi" }, void 0, false, {
+              /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("span", { className: "gradient-text", children: "& Teknologi" }, void 0, false, {
                 fileName: "components/sections/Skills.tsx",
                 lineNumber: 88,
                 columnNumber: 22
@@ -8483,13 +8483,23 @@ function ProjectCard({ project, index }) {
       viewport: { once: true, margin: "-50px" },
       transition: { duration: 0.5, delay: index * 0.1 },
       whileHover: { y: -8 },
-      className: "bg-background-card border border-border rounded-2xl overflow-hidden group hover:border-accent-primary hover:shadow-glow transition-all duration-300",
+      className: "surface-card rounded-[1.35rem] overflow-hidden group hover:border-accent-primary hover:shadow-glow transition-all duration-300",
       "data-category": project.category,
       children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "h-52 bg-background-tertiary flex items-center justify-center relative overflow-hidden", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("i", { className: `${project.icon} text-6xl text-text-muted group-hover:scale-110 transition-transform duration-300` }, void 0, false, {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(56,215,189,.3),transparent_42%),radial-gradient(circle_at_20%_10%,rgba(117,103,248,.42),transparent_48%)] group-hover:scale-110 transition-transform duration-700" }, void 0, false, {
             fileName: "components/ui/ProjectCard.tsx",
             lineNumber: 24,
+            columnNumber: 9
+          }, this),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("span", { className: "absolute top-4 left-4 rounded-full bg-slate-950/35 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-white/75 border border-white/10", children: project.category }, void 0, false, {
+            fileName: "components/ui/ProjectCard.tsx",
+            lineNumber: 25,
+            columnNumber: 9
+          }, this),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("i", { className: `${project.icon} relative text-5xl text-white/80 group-hover:scale-110 group-hover:-rotate-6 transition-transform duration-500` }, void 0, false, {
+            fileName: "components/ui/ProjectCard.tsx",
+            lineNumber: 26,
             columnNumber: 9
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "absolute inset-0 bg-background-primary/90 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300", children: [
@@ -8503,7 +8513,7 @@ function ProjectCard({ project, index }) {
                 "aria-label": "View live",
                 children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("i", { className: "fas fa-external-link-alt" }, void 0, false, {
                   fileName: "components/ui/ProjectCard.tsx",
-                  lineNumber: 36,
+                  lineNumber: 38,
                   columnNumber: 15
                 }, this)
               },
@@ -8511,7 +8521,7 @@ function ProjectCard({ project, index }) {
               false,
               {
                 fileName: "components/ui/ProjectCard.tsx",
-                lineNumber: 29,
+                lineNumber: 31,
                 columnNumber: 13
               },
               this
@@ -8526,7 +8536,7 @@ function ProjectCard({ project, index }) {
                 "aria-label": "View code",
                 children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("i", { className: "fab fa-github" }, void 0, false, {
                   fileName: "components/ui/ProjectCard.tsx",
-                  lineNumber: 47,
+                  lineNumber: 49,
                   columnNumber: 15
                 }, this)
               },
@@ -8534,7 +8544,7 @@ function ProjectCard({ project, index }) {
               false,
               {
                 fileName: "components/ui/ProjectCard.tsx",
-                lineNumber: 40,
+                lineNumber: 42,
                 columnNumber: 13
               },
               this
@@ -8549,7 +8559,7 @@ function ProjectCard({ project, index }) {
                 "aria-label": "View on Behance",
                 children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("i", { className: "fab fa-behance" }, void 0, false, {
                   fileName: "components/ui/ProjectCard.tsx",
-                  lineNumber: 58,
+                  lineNumber: 60,
                   columnNumber: 15
                 }, this)
               },
@@ -8557,14 +8567,14 @@ function ProjectCard({ project, index }) {
               false,
               {
                 fileName: "components/ui/ProjectCard.tsx",
-                lineNumber: 51,
+                lineNumber: 53,
                 columnNumber: 13
               },
               this
             )
           ] }, void 0, true, {
             fileName: "components/ui/ProjectCard.tsx",
-            lineNumber: 27,
+            lineNumber: 29,
             columnNumber: 9
           }, this)
         ] }, void 0, true, {
@@ -8573,38 +8583,38 @@ function ProjectCard({ project, index }) {
           columnNumber: 7
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "p-6", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("h3", { className: "text-xl font-semibold text-text-primary mb-2", children: project.title }, void 0, false, {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("h3", { className: "text-xl font-bold text-text-primary mb-2", children: project.title }, void 0, false, {
             fileName: "components/ui/ProjectCard.tsx",
-            lineNumber: 66,
+            lineNumber: 68,
             columnNumber: 9
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("p", { className: "text-text-secondary text-sm mb-4 line-clamp-2", children: project.description }, void 0, false, {
             fileName: "components/ui/ProjectCard.tsx",
-            lineNumber: 69,
+            lineNumber: 71,
             columnNumber: 9
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "flex flex-wrap gap-2", children: project.tags.map((tag) => /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(
             "span",
             {
-              className: "px-3 py-1 bg-background-tertiary text-accent-primary text-xs font-medium rounded-full",
+              className: "px-3 py-1 bg-background-tertiary text-accent-primary text-[11px] font-bold rounded-full",
               children: tag
             },
             tag,
             false,
             {
               fileName: "components/ui/ProjectCard.tsx",
-              lineNumber: 76,
+              lineNumber: 78,
               columnNumber: 13
             },
             this
           )) }, void 0, false, {
             fileName: "components/ui/ProjectCard.tsx",
-            lineNumber: 74,
+            lineNumber: 76,
             columnNumber: 9
           }, this)
         ] }, void 0, true, {
           fileName: "components/ui/ProjectCard.tsx",
-          lineNumber: 65,
+          lineNumber: 67,
           columnNumber: 7
         }, this)
       ]
@@ -8645,7 +8655,7 @@ function Projects() {
       return projectsData;
     return projectsData.filter((project) => project.category === activeFilter);
   }, [activeFilter]);
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("section", { id: "projects", className: "relative py-28 bg-background-secondary overflow-hidden", children: [
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("section", { id: "projects", className: "section-shell relative py-28 bg-background-secondary", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("div", { className: "absolute inset-0 pointer-events-none -z-10 overflow-hidden", children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("div", { className: "absolute top-1/3 -right-20 w-[500px] h-[500px] bg-purple-600/15 rounded-full blur-[140px]" }, void 0, false, {
         fileName: "components/sections/Projects.tsx",
@@ -8677,7 +8687,7 @@ function Projects() {
           transition: { duration: 0.6 },
           className: "flex flex-col items-center text-center mb-12 space-y-4",
           children: [
-            /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("div", { className: "inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-xs font-semibold tracking-widest uppercase backdrop-blur-md", children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("div", { className: "eyebrow", children: [
               /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("i", { className: "fas fa-folder-open text-xs text-purple-400" }, void 0, false, {
                 fileName: "components/sections/Projects.tsx",
                 lineNumber: 58,
@@ -8693,9 +8703,9 @@ function Projects() {
               lineNumber: 57,
               columnNumber: 11
             }, this),
-            /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("h2", { className: "text-4xl sm:text-5xl lg:text-6xl font-extrabold text-text-primary tracking-tight", children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("h2", { className: "text-4xl sm:text-5xl lg:text-6xl font-extrabold text-text-primary tracking-[-.05em]", children: [
               "Portofolio ",
-              /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("span", { className: "bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-400 to-indigo-400", children: "Proyek" }, void 0, false, {
+              /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("span", { className: "gradient-text", children: "Proyek" }, void 0, false, {
                 fileName: "components/sections/Projects.tsx",
                 lineNumber: 63,
                 columnNumber: 24
@@ -8987,7 +8997,7 @@ function Contact() {
     setFormState({ name: "", email: "", subject: "", message: "" });
     setTimeout(() => setShowNotification(false), 4e3);
   };
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("section", { id: "contact", className: "relative py-28 bg-background-primary overflow-hidden", children: [
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("section", { id: "contact", className: "section-shell relative py-28 bg-background-primary", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("div", { className: "absolute inset-0 pointer-events-none -z-10 overflow-hidden", children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("div", { className: "absolute top-1/4 -left-20 w-96 h-96 bg-purple-600/15 rounded-full blur-[130px]" }, void 0, false, {
         fileName: "components/sections/Contact.tsx",
@@ -9019,7 +9029,7 @@ function Contact() {
           transition: { duration: 0.6 },
           className: "flex flex-col items-center text-center mb-16 space-y-4",
           children: [
-            /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("div", { className: "inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-xs font-semibold tracking-widest uppercase backdrop-blur-md", children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("div", { className: "eyebrow", children: [
               /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("i", { className: "fas fa-paper-plane text-xs text-purple-400" }, void 0, false, {
                 fileName: "components/sections/Contact.tsx",
                 lineNumber: 65,
@@ -9035,9 +9045,9 @@ function Contact() {
               lineNumber: 64,
               columnNumber: 11
             }, this),
-            /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("h2", { className: "text-4xl sm:text-5xl lg:text-6xl font-extrabold text-text-primary tracking-tight", children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("h2", { className: "text-4xl sm:text-5xl lg:text-6xl font-extrabold text-text-primary tracking-[-.05em]", children: [
               "Hubungi ",
-              /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("span", { className: "bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-400 to-indigo-400", children: "Saya" }, void 0, false, {
+              /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("span", { className: "gradient-text", children: "Saya" }, void 0, false, {
                 fileName: "components/sections/Contact.tsx",
                 lineNumber: 70,
                 columnNumber: 21
@@ -9694,4 +9704,4 @@ gsap/ScrollTrigger.js:
    * @author: Jack Doyle, jack@greensock.com
   *)
 */
-//# sourceMappingURL=/build/routes/_index-ZM3O4OEA.js.map
+//# sourceMappingURL=/build/routes/_index-INYCB5W5.js.map

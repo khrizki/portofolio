@@ -12,7 +12,7 @@ import {
   Scripts,
   ScrollRestoration,
   useLocation
-} from "/build/_shared/chunk-HOMJSFGT.js";
+} from "/build/_shared/chunk-TEVHQX2B.js";
 import {
   require_jsx_dev_runtime
 } from "/build/_shared/chunk-CBDF6H27.js";
@@ -844,7 +844,12 @@ var import_jsx_dev_runtime5 = __toESM(require_jsx_dev_runtime());
 "use client";
 function Footer() {
   const currentYear = (/* @__PURE__ */ new Date()).getFullYear();
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("footer", { className: "bg-background-secondary border-t border-border py-8", children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "max-w-7xl mx-auto px-6", children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "flex flex-col items-center gap-3 text-center", children: [
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("footer", { className: "bg-background-secondary border-t border-border py-10", children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "max-w-7xl mx-auto px-6", children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "flex flex-col items-center gap-3 text-center", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("a", { href: "#home", className: "font-mono text-sm font-bold gradient-text", children: "<KR />" }, void 0, false, {
+      fileName: "components/layout/Footer.tsx",
+      lineNumber: 10,
+      columnNumber: 11
+    }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("p", { className: "text-text-muted text-sm", children: [
       "\xA9 ",
       currentYear,
@@ -852,70 +857,70 @@ function Footer() {
       " ",
       /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("span", { className: "text-red-500", children: "\u2764" }, void 0, false, {
         fileName: "components/layout/Footer.tsx",
-        lineNumber: 12,
+        lineNumber: 13,
         columnNumber: 13
       }, this),
       " dan",
       " ",
       /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("span", { className: "text-amber-600", children: "\u2615" }, void 0, false, {
         fileName: "components/layout/Footer.tsx",
-        lineNumber: 13,
+        lineNumber: 14,
         columnNumber: 13
       }, this)
     ] }, void 0, true, {
       fileName: "components/layout/Footer.tsx",
-      lineNumber: 10,
+      lineNumber: 11,
       columnNumber: 11
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("p", { className: "text-text-muted text-sm", children: "Designed & Developed by Khairul Rizky" }, void 0, false, {
       fileName: "components/layout/Footer.tsx",
-      lineNumber: 15,
+      lineNumber: 16,
       columnNumber: 11
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "flex items-center gap-2 mt-2", children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("span", { className: "text-xs text-text-muted", children: "Built with" }, void 0, false, {
         fileName: "components/layout/Footer.tsx",
-        lineNumber: 19,
-        columnNumber: 13
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("span", { className: "text-xs text-accent-primary", children: "Next.js" }, void 0, false, {
-        fileName: "components/layout/Footer.tsx",
         lineNumber: 20,
         columnNumber: 13
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("span", { className: "text-text-muted", children: "\u2022" }, void 0, false, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("span", { className: "text-xs text-accent-primary", children: "Remix" }, void 0, false, {
         fileName: "components/layout/Footer.tsx",
         lineNumber: 21,
         columnNumber: 13
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("span", { className: "text-xs text-accent-secondary", children: "Tailwind CSS" }, void 0, false, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("span", { className: "text-text-muted", children: "\u2022" }, void 0, false, {
         fileName: "components/layout/Footer.tsx",
         lineNumber: 22,
         columnNumber: 13
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("span", { className: "text-text-muted", children: "\u2022" }, void 0, false, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("span", { className: "text-xs text-accent-secondary", children: "Tailwind CSS" }, void 0, false, {
         fileName: "components/layout/Footer.tsx",
         lineNumber: 23,
         columnNumber: 13
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("span", { className: "text-xs text-green-400", children: "GSAP" }, void 0, false, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("span", { className: "text-text-muted", children: "\u2022" }, void 0, false, {
         fileName: "components/layout/Footer.tsx",
         lineNumber: 24,
         columnNumber: 13
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("span", { className: "text-text-muted", children: "\u2022" }, void 0, false, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("span", { className: "text-xs text-green-400", children: "GSAP" }, void 0, false, {
         fileName: "components/layout/Footer.tsx",
         lineNumber: 25,
         columnNumber: 13
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("span", { className: "text-xs text-blue-400", children: "Framer Motion" }, void 0, false, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("span", { className: "text-text-muted", children: "\u2022" }, void 0, false, {
         fileName: "components/layout/Footer.tsx",
         lineNumber: 26,
+        columnNumber: 13
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("span", { className: "text-xs text-blue-400", children: "Framer Motion" }, void 0, false, {
+        fileName: "components/layout/Footer.tsx",
+        lineNumber: 27,
         columnNumber: 13
       }, this)
     ] }, void 0, true, {
       fileName: "components/layout/Footer.tsx",
-      lineNumber: 18,
+      lineNumber: 19,
       columnNumber: 11
     }, this)
   ] }, void 0, true, {
@@ -1106,7 +1111,7 @@ window.$RefreshReg$ = prevRefreshReg;
 window.$RefreshSig$ = prevRefreshSig;
 
 // app/styles/global.css?url
-var global_default = "/build/_assets/global-RN47NMDU.css?url";
+var global_default = "/build/_assets/global-YC7FMU32.css?url";
 
 // app/root.tsx
 var import_jsx_dev_runtime8 = __toESM(require_jsx_dev_runtime());
@@ -1213,4 +1218,4 @@ export {
   App as default,
   links
 };
-//# sourceMappingURL=/build/root-7EWXZAXG.js.map
+//# sourceMappingURL=/build/root-3BD6IBJW.js.map

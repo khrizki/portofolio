@@ -35,7 +35,7 @@ export default function Projects() {
   }, [activeFilter]);
 
   return (
-    <section id="projects" className="relative py-28 bg-background-secondary overflow-hidden">
+    <section id="projects" className="section-shell relative py-28 bg-background-secondary">
       {/* Background Lighting & FX */}
       <div className="absolute inset-0 pointer-events-none -z-10 overflow-hidden">
         <div className="absolute top-1/3 -right-20 w-[500px] h-[500px] bg-purple-600/15 rounded-full blur-[140px]" />
@@ -54,13 +54,13 @@ export default function Projects() {
           className="flex flex-col items-center text-center mb-12 space-y-4"
         >
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-xs font-semibold tracking-widest uppercase backdrop-blur-md">
+          <div className="eyebrow">
             <i className="fas fa-folder-open text-xs text-purple-400" />
             <span>Featured Works</span>
           </div>
 
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-text-primary tracking-tight">
-            Portofolio <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-400 to-indigo-400">Proyek</span>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-text-primary tracking-[-.05em]">
+            Portofolio <span className="gradient-text">Proyek</span>
           </h2>
 
           <p className="text-text-secondary text-base sm:text-lg max-w-2xl font-normal leading-relaxed">

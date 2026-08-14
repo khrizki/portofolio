@@ -12,7 +12,7 @@ export default function About() {
   const clients = useCounter(stats.clients);
 
   return (
-    <section id="about" className="relative py-28 bg-background-secondary overflow-hidden">
+    <section id="about" className="section-shell relative py-28 bg-background-secondary">
       {/* Background Lighting & FX */}
       <div className="absolute inset-0 pointer-events-none -z-10 overflow-hidden">
         <div className="absolute top-1/3 -left-20 w-[450px] h-[450px] bg-purple-600/15 rounded-full blur-[140px]" />
@@ -31,13 +31,13 @@ export default function About() {
           className="flex flex-col items-center text-center mb-16 space-y-4"
         >
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-xs font-semibold tracking-widest uppercase backdrop-blur-md">
+          <div className="eyebrow">
             <i className="fas fa-user-circle text-xs text-purple-400" />
             <span>Biography</span>
           </div>
 
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-text-primary tracking-tight">
-            Tentang <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-400 to-indigo-400">Saya</span>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-text-primary tracking-[-.05em]">
+            Tentang <span className="gradient-text">Saya</span>
           </h2>
 
           <p className="text-text-secondary text-base sm:text-lg max-w-2xl font-normal leading-relaxed">
@@ -71,7 +71,7 @@ export default function About() {
               />
 
               {/* Glass Card Container */}
-              <div className="relative w-full h-full bg-zinc-950/80 border border-white/10 rounded-3xl p-6 backdrop-blur-xl flex flex-col items-center justify-center shadow-2xl overflow-hidden group">
+              <div className="surface-card relative w-full h-full rounded-3xl p-6 backdrop-blur-xl flex flex-col items-center justify-center shadow-2xl overflow-hidden group">
                 <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl bg-gradient-to-br from-purple-500/20 to-indigo-500/20 border border-purple-500/30 flex items-center justify-center text-purple-400 text-5xl sm:text-6xl mb-4 group-hover:scale-110 transition-transform duration-500">
                   <i className="fas fa-terminal" />
                 </div>

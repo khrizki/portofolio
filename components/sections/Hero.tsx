@@ -25,7 +25,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden bg-background-primary">
+    <section id="home" className="section-shell relative min-h-screen flex items-center pt-28 pb-16 bg-background-primary">
       {/* Background Lighting & FX */}
       <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
         {/* Animated Gradient Orbs */}
@@ -59,7 +59,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
-            className="lg:col-span-7 space-y-8"
+          className="lg:col-span-7 space-y-8 lg:pr-8"
           >
             {/* Status Badge */}
             <motion.div
@@ -68,12 +68,12 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
               className="inline-flex"
             >
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 backdrop-blur-md">
+              <div className="eyebrow">
                 <span className="relative flex h-2.5 w-2.5">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
                 </span>
-                <span className="text-xs font-medium text-purple-300 tracking-wide uppercase">
+                <span>
                   {hero.subtitle || 'Available for projects'}
                 </span>
               </div>
@@ -86,15 +86,15 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
               className="space-y-3"
             >
-              <h2 className="text-xl md:text-2xl font-medium text-text-secondary">
-                Halo, Saya 
+              <h2 className="text-lg md:text-xl font-semibold text-text-secondary tracking-wide">
+                Halo, saya
               </h2>
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-text-primary tracking-tight leading-[1.1]">
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-purple-200 to-purple-400">
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-text-primary tracking-[-.06em] leading-[1.02]">
+                <span className="gradient-text">
                   {hero.name}
                 </span>
               </h1>
-              <p className="text-3xl sm:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-400 to-indigo-400">
+              <p className="text-2xl sm:text-3xl font-bold text-text-primary">
                 {hero.title}
               </p>
             </motion.div>
@@ -104,7 +104,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-              className="text-text-secondary text-lg max-w-xl leading-relaxed font-normal"
+              className="text-text-secondary text-base sm:text-lg max-w-xl leading-8 font-medium"
             >
               {hero.description}
             </motion.p>
@@ -134,7 +134,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-              className="pt-4 flex items-center gap-4"
+              className="pt-3 flex items-center gap-3"
             >
               <span className="text-xs uppercase tracking-widest text-text-muted font-semibold mr-2">
                 Hubungkan:
@@ -152,7 +152,7 @@ export default function Hero() {
                   aria-label={social.label}
                   whileHover={{ y: -4, scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
-                  className="w-11 h-11 bg-background-card/80 backdrop-blur-md border border-border/80 rounded-xl flex items-center justify-center text-text-secondary hover:text-white hover:border-purple-500/50 hover:bg-purple-500/10 hover:shadow-[0_0_20px_rgba(168,85,247,0.3)] transition-all duration-300"
+                  className="w-10 h-10 surface-card rounded-full flex items-center justify-center text-text-secondary hover:text-white hover:border-accent-primary hover:bg-accent-primary hover:shadow-glow transition-all duration-300"
                 >
                   <i className={`${social.icon} text-lg`} />
                 </motion.a>
@@ -169,10 +169,10 @@ export default function Hero() {
           >
             <div className="relative group">
               {/* Outer Decorative Glow */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl blur-lg opacity-30 group-hover:opacity-50 transition duration-500" />
+              <div className="absolute -inset-1 bg-gradient-to-r from-accent-primary to-accent-secondary rounded-[1.4rem] blur-lg opacity-25 group-hover:opacity-50 transition duration-500" />
 
               {/* IDE Container */}
-              <div className="relative bg-zinc-950/90 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden shadow-2xl">
+              <div className="relative bg-[#0d1324]/95 backdrop-blur-xl border border-white/10 rounded-[1.3rem] overflow-hidden shadow-2xl">
                 
                 {/* IDE Header */}
                 <div className="flex items-center justify-between px-4 py-3 bg-white/[0.03] border-b border-white/10 select-none">
@@ -188,7 +188,7 @@ export default function Hero() {
                       onClick={() => setActiveTab('code')}
                       className={`px-3 py-1 rounded-md transition-all ${
                         activeTab === 'code'
-                          ? 'bg-purple-600 text-white font-medium shadow-sm'
+                          ? 'bg-accent-primary text-white font-medium shadow-sm'
                           : 'text-zinc-400 hover:text-white'
                       }`}
                     >
@@ -198,7 +198,7 @@ export default function Hero() {
                       onClick={() => setActiveTab('terminal')}
                       className={`px-3 py-1 rounded-md transition-all ${
                         activeTab === 'terminal'
-                          ? 'bg-purple-600 text-white font-medium shadow-sm'
+                          ? 'bg-accent-primary text-white font-medium shadow-sm'
                           : 'text-zinc-400 hover:text-white'
                       }`}
                     >
@@ -296,12 +296,12 @@ export default function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1, duration: 0.5 }}
       >
-        <span className="text-[11px] font-medium uppercase tracking-widest text-text-muted group-hover:text-purple-400 transition-colors">
+        <span className="text-[11px] font-bold uppercase tracking-[.16em] text-text-muted group-hover:text-accent-secondary transition-colors">
           Scroll Down
         </span>
-        <div className="w-5 h-9 border-2 border-white/20 group-hover:border-purple-400/50 rounded-full flex justify-center p-1 transition-colors">
+        <div className="w-5 h-9 border-2 border-white/20 group-hover:border-accent-secondary/50 rounded-full flex justify-center p-1 transition-colors">
           <motion.div
-            className="w-1 h-2 bg-purple-400 rounded-full"
+            className="w-1 h-2 bg-accent-secondary rounded-full"
             animate={{ y: [0, 12, 0] }}
             transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
           />

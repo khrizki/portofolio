@@ -4,9 +4,10 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-background-secondary border-t border-border py-8">
+    <footer className="bg-background-secondary border-t border-border py-10">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col items-center gap-3 text-center">
+          <a href="#home" className="font-mono text-sm font-bold gradient-text">&lt;KR /&gt;</a>
           <p className="text-text-muted text-sm">
             &copy; {currentYear} Khairul Rizky. Dibuat dengan{' '}
             <span className="text-red-500">❤</span> dan{' '}
@@ -17,7 +18,7 @@ export default function Footer() {
           </p>
           <div className="flex items-center gap-2 mt-2">
             <span className="text-xs text-text-muted">Built with</span>
-            <span className="text-xs text-accent-primary">Next.js</span>
+            <span className="text-xs text-accent-primary">Remix</span>
             <span className="text-text-muted">•</span>
             <span className="text-xs text-accent-secondary">Tailwind CSS</span>
             <span className="text-text-muted">•</span>

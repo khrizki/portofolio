@@ -42,7 +42,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative py-28 bg-background-primary overflow-hidden">
+    <section id="contact" className="section-shell relative py-28 bg-background-primary">
       {/* Ambient Glow Background FX */}
       <div className="absolute inset-0 pointer-events-none -z-10 overflow-hidden">
         <div className="absolute top-1/4 -left-20 w-96 h-96 bg-purple-600/15 rounded-full blur-[130px]" />
@@ -61,13 +61,13 @@ export default function Contact() {
           className="flex flex-col items-center text-center mb-16 space-y-4"
         >
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-xs font-semibold tracking-widest uppercase backdrop-blur-md">
+          <div className="eyebrow">
             <i className="fas fa-paper-plane text-xs text-purple-400" />
             <span>Get In Touch</span>
           </div>
 
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-text-primary tracking-tight">
-            Hubungi <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-400 to-indigo-400">Saya</span>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-text-primary tracking-[-.05em]">
+            Hubungi <span className="gradient-text">Saya</span>
           </h2>
 
           <p className="text-text-secondary text-base sm:text-lg max-w-2xl font-normal leading-relaxed">

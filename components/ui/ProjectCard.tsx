@@ -16,12 +16,14 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       viewport={{ once: true, margin: '-50px' }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       whileHover={{ y: -8 }}
-      className="bg-background-card border border-border rounded-2xl overflow-hidden group hover:border-accent-primary hover:shadow-glow transition-all duration-300"
+      className="surface-card rounded-[1.35rem] overflow-hidden group hover:border-accent-primary hover:shadow-glow transition-all duration-300"
       data-category={project.category}
     >
       {/* Project Image */}
       <div className="h-52 bg-background-tertiary flex items-center justify-center relative overflow-hidden">
-        <i className={`${project.icon} text-6xl text-text-muted group-hover:scale-110 transition-transform duration-300`} />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(56,215,189,.3),transparent_42%),radial-gradient(circle_at_20%_10%,rgba(117,103,248,.42),transparent_48%)] group-hover:scale-110 transition-transform duration-700" />
+        <span className="absolute top-4 left-4 rounded-full bg-slate-950/35 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-white/75 border border-white/10">{project.category}</span>
+        <i className={`${project.icon} relative text-5xl text-white/80 group-hover:scale-110 group-hover:-rotate-6 transition-transform duration-500`} />
 
         {/* Overlay */}
         <div className="absolute inset-0 bg-background-primary/90 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -63,7 +65,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
 
       {/* Project Info */}
       <div className="p-6">
-        <h3 className="text-xl font-semibold text-text-primary mb-2">
+        <h3 className="text-xl font-bold text-text-primary mb-2">
           {project.title}
         </h3>
         <p className="text-text-secondary text-sm mb-4 line-clamp-2">
@@ -75,7 +77,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="px-3 py-1 bg-background-tertiary text-accent-primary text-xs font-medium rounded-full"
+              className="px-3 py-1 bg-background-tertiary text-accent-primary text-[11px] font-bold rounded-full"
             >
               {tag}
             </span>

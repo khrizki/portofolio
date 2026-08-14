@@ -60,7 +60,7 @@ export default function Skills() {
   };
 
   return (
-    <section id="skills" className="relative py-28 bg-background-primary overflow-hidden">
+    <section id="skills" className="section-shell relative py-28 bg-background-primary">
       {/* Background Lighting / Ambient Glow */}
       <div className="absolute inset-0 pointer-events-none -z-10 overflow-hidden">
         <div className="absolute top-1/4 -left-20 w-96 h-96 bg-purple-600/15 rounded-full blur-[120px]" />
@@ -79,13 +79,13 @@ export default function Skills() {
           className="flex flex-col items-center text-center mb-12 space-y-4"
         >
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-xs font-semibold tracking-widest uppercase backdrop-blur-md">
+          <div className="eyebrow">
             <i className="fas fa-code text-xs text-purple-400" />
             <span>Tech Stack & Competencies</span>
           </div>
 
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-text-primary tracking-tight">
-            Keahlian <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-400 to-indigo-400">&amp; Teknologi</span>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-text-primary tracking-[-.05em]">
+            Keahlian <span className="gradient-text">&amp; Teknologi</span>
           </h2>
 
           <p className="text-text-secondary text-base sm:text-lg max-w-2xl font-normal leading-relaxed">
