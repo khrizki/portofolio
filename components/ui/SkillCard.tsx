@@ -41,20 +41,20 @@ export default function SkillCard({ skill, index }: SkillCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.05 }}
-      className="surface-card rounded-2xl p-6 text-center hover:border-accent-primary hover:-translate-y-1 hover:shadow-glow transition-all duration-300 group"
+      className="surface-card group rounded-2xl p-5 text-center transition-all duration-300 hover:-translate-y-1 hover:border-accent-primary hover:shadow-glow sm:p-6"
     >
       {/* Icon */}
-      <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-accent-primary/15 to-accent-secondary/15 border border-white/5 rounded-2xl flex items-center justify-center text-2xl group-hover:rotate-6 transition-transform">
+      <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl border border-accent-primary/15 bg-gradient-to-br from-accent-primary/15 to-accent-secondary/15 text-2xl transition-transform group-hover:rotate-6 group-hover:scale-105">
         <i className={`${skill.icon} gradient-text`} />
       </div>
 
       {/* Skill Name */}
-      <span className="block font-semibold text-text-primary mb-3">
+      <span className="mb-3 block font-semibold tracking-[-.02em] text-text-primary">
         {skill.name}
       </span>
 
       {/* Progress Bar */}
-      <div className="h-1.5 bg-background-tertiary rounded-full overflow-hidden">
+      <div className="h-1.5 overflow-hidden rounded-full bg-background-tertiary">
         <motion.div
           className="h-full bg-gradient-to-r from-accent-primary to-accent-secondary rounded-full"
           initial={{ width: 0 }}

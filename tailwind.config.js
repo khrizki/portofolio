@@ -21,6 +21,7 @@ module.exports = {
         accent: {
           primary: 'var(--accent-primary)',
           secondary: 'var(--accent-secondary)',
+          tertiary: 'var(--accent-tertiary)',
         },
         border: {
           DEFAULT: 'var(--border-color)',
@@ -31,8 +32,8 @@ module.exports = {
         error: 'var(--error)',
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        mono: ['Fira Code', 'monospace'],
+        sans: ['Manrope', 'system-ui', 'sans-serif'],
+        mono: ['DM Mono', 'monospace'],
       },
       boxShadow: {
         glow: '0 0 40px rgba(99, 102, 241, 0.15)',

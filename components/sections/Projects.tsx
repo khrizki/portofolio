@@ -51,7 +51,7 @@ export default function Projects() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="flex flex-col items-center text-center mb-12 space-y-4"
+          className="mb-12 flex flex-col items-center space-y-4 text-center sm:mb-14"
         >
           {/* Badge */}
           <div className="eyebrow">
@@ -59,11 +59,11 @@ export default function Projects() {
             <span>Featured Works</span>
           </div>
 
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-text-primary tracking-[-.05em]">
+          <h2 className="section-heading">
             Portofolio <span className="gradient-text">Proyek</span>
           </h2>
 
-          <p className="text-text-secondary text-base sm:text-lg max-w-2xl font-normal leading-relaxed">
+          <p className="section-copy max-w-2xl">
             Jelajahi berbagai proyek web, aplikasi mobile, dan desain antarmuka yang telah saya kembangkan dengan standar kualitas terbaik.
           </p>
         </motion.div>
@@ -76,7 +76,7 @@ export default function Projects() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="flex justify-center mb-12"
         >
-          <div className="inline-flex flex-wrap items-center justify-center gap-1.5 p-1.5 bg-background-card/80 border border-white/10 rounded-2xl backdrop-blur-md">
+          <div className="surface-card inline-flex flex-wrap items-center justify-center gap-1.5 rounded-2xl p-1.5 backdrop-blur-md">
             {filters.map((filter) => {
               const isActive = activeFilter === filter.value;
               const count = filterCounts[filter.value] || 0;
@@ -93,7 +93,7 @@ export default function Projects() {
                   {isActive && (
                     <motion.div
                       layoutId="activeProjectFilter"
-                      className="absolute inset-0 bg-purple-600 rounded-xl shadow-[0_0_20px_rgba(168,85,247,0.4)]"
+                      className="absolute inset-0 rounded-xl bg-accent-primary shadow-glow"
                       transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                     />
                   )}
@@ -103,7 +103,7 @@ export default function Projects() {
                     className={`relative z-10 px-2 py-0.5 rounded-full text-[10px] font-mono transition-colors ${
                       isActive
                         ? 'bg-white/20 text-white'
-                        : 'bg-white/5 text-text-muted'
+                        : 'bg-background-tertiary/70 text-text-muted'
                     }`}
                   >
                     {count}
@@ -115,7 +115,7 @@ export default function Projects() {
         </motion.div>
 
         {/* Projects Animated Grid */}
-        <motion.div layout className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div layout className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project, index) => (
               <motion.div
@@ -137,16 +137,16 @@ export default function Projects() {
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-center py-20 bg-background-card/30 rounded-3xl border border-white/5 backdrop-blur-xl"
+            className="surface-card rounded-3xl py-20 text-center backdrop-blur-xl"
           >
-            <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400">
+            <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl border border-accent-primary/20 bg-accent-primary/10 text-accent-primary">
               <i className="fas fa-folder-open text-2xl" />
             </div>
             <p className="text-text-primary text-lg font-semibold">Tidak Ada Proyek Ditemukan</p>
             <p className="text-text-muted text-sm mt-1">Belum ada karya yang dipublikasikan dalam kategori ini.</p>
             <button
               onClick={() => setActiveFilter('all')}
-              className="mt-5 px-5 py-2.5 bg-purple-600 hover:bg-purple-500 text-white rounded-xl text-xs font-semibold shadow-lg shadow-purple-500/20 transition-all"
+              className="mt-5 rounded-xl bg-accent-primary px-5 py-2.5 text-xs font-semibold text-white shadow-lg transition-all hover:-translate-y-0.5"
             >
               Tampilkan Semua Proyek
             </button>
@@ -161,7 +161,7 @@ export default function Projects() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mt-16 text-center"
         >
-          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-2xl bg-background-card/60 border border-white/10 backdrop-blur-md">
+          <div className="surface-card inline-flex flex-wrap items-center justify-center gap-3 rounded-2xl px-6 py-3 backdrop-blur-md">
             <span className="text-text-secondary text-sm">
               Ingin melihat eksperimen &amp; kode sumber lainnya?
             </span>
@@ -169,7 +169,7 @@ export default function Projects() {
               href="https://github.com/khrizki"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-xs font-semibold text-purple-400 hover:text-purple-300 transition-colors"
+              className="inline-flex items-center gap-2 text-xs font-semibold text-accent-primary transition-colors hover:text-accent-secondary"
             >
               <span>Lihat GitHub</span>
               <i className="fas fa-arrow-right text-xs" />

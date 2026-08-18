@@ -76,7 +76,7 @@ export default function Skills() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="flex flex-col items-center text-center mb-12 space-y-4"
+          className="mb-12 flex flex-col items-center space-y-4 text-center sm:mb-14"
         >
           {/* Badge */}
           <div className="eyebrow">
@@ -84,11 +84,11 @@ export default function Skills() {
             <span>Tech Stack & Competencies</span>
           </div>
 
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-text-primary tracking-[-.05em]">
+          <h2 className="section-heading">
             Keahlian <span className="gradient-text">&amp; Teknologi</span>
           </h2>
 
-          <p className="text-text-secondary text-base sm:text-lg max-w-2xl font-normal leading-relaxed">
+          <p className="section-copy max-w-2xl">
             Kumpulan bahasa pemrograman, framework, dan tools yang saya gunakan untuk membangun solusi digital yang responsif, cepat, dan terstruktur.
           </p>
         </motion.div>
@@ -99,10 +99,10 @@ export default function Skills() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="flex flex-col md:flex-row items-center justify-between gap-4 mb-12"
+          className="mb-12 flex flex-col items-center justify-between gap-4 md:flex-row"
         >
           {/* Category Tabs */}
-          <div className="flex flex-wrap items-center justify-center gap-2 bg-background-card/60 p-1.5 rounded-2xl border border-white/10 backdrop-blur-md w-full md:w-auto">
+          <div className="surface-card flex w-full flex-wrap items-center justify-center gap-2 rounded-2xl p-1.5 backdrop-blur-md md:w-auto">
             {categories.map((cat) => {
               const isActive = selectedCategory === cat.toLowerCase();
               return (
@@ -111,8 +111,8 @@ export default function Skills() {
                   onClick={() => setSelectedCategory(cat.toLowerCase())}  
                   className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all duration-300 capitalize ${
                     isActive
-                      ? 'bg-purple-600 text-white shadow-[0_0_15px_rgba(168,85,247,0.4)]'
-                      : 'text-text-secondary hover:text-white hover:bg-white/5'
+                      ? 'bg-accent-primary text-white shadow-glow'
+                      : 'text-text-secondary hover:bg-white/5 hover:text-text-primary'
                   }`}
                 >
                   {cat === 'all' ? 'Semua Skill' : cat}
@@ -129,12 +129,12 @@ export default function Skills() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Cari skill..."
-              className="w-full bg-background-card/60 border border-white/10 rounded-xl pl-10 pr-4 py-2 text-sm text-text-primary placeholder:text-text-muted focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/50 backdrop-blur-md transition-all"
+              className="input-field py-2.5 pl-10 pr-10 text-sm placeholder:text-text-muted backdrop-blur-md"
             />
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery('')}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-text-muted hover:text-white text-xs"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-text-muted hover:text-text-primary"
               >
                 <i className="fas fa-times" />
               </button>
@@ -156,17 +156,17 @@ export default function Skills() {
               {filteredData.map((category) => (
                 <div
                   key={category!.title}
-                  className="bg-background-card/30 border border-white/5 rounded-3xl p-6 sm:p-8 backdrop-blur-xl"
+                  className="surface-card rounded-3xl p-6 backdrop-blur-xl sm:p-8"
                 >
                   {/* Category Section Title */}
-                  <div className="flex items-center justify-between mb-6 pb-4 border-b border-white/5">
+                  <div className="mb-6 flex items-center justify-between border-b border-border pb-4">
                     <h3 className="text-xl sm:text-2xl font-bold text-text-primary flex items-center gap-3">
-                      <span className="p-2 rounded-xl bg-purple-500/10 text-purple-400 border border-purple-500/20 text-lg">
+                      <span className="rounded-xl border border-accent-primary/20 bg-accent-primary/10 p-2 text-lg text-accent-primary">
                         <i className={category!.icon} />
                       </span>
                       {category!.title}
                     </h3>
-                    <span className="text-xs text-text-muted font-mono bg-white/5 px-3 py-1 rounded-full border border-white/5">
+                    <span className="rounded-full border border-border bg-background-tertiary/45 px-3 py-1 font-mono text-xs text-text-muted">
                       {category!.skills.length} Tech
                     </span>
                   </div>
@@ -192,7 +192,7 @@ export default function Skills() {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="text-center py-16 bg-background-card/20 rounded-3xl border border-white/5"
+              className="surface-card rounded-3xl py-16 text-center"
             >
               <i className="fas fa-search-minus text-4xl text-text-muted mb-4 block" />
               <p className="text-text-secondary text-lg font-medium">Skill tidak ditemukan</p>
@@ -202,7 +202,7 @@ export default function Skills() {
                   setSelectedCategory('all');
                   setSearchQuery('');
                 }}
-                className="mt-4 px-4 py-2 bg-purple-600/20 border border-purple-500/30 text-purple-300 rounded-xl text-xs font-semibold hover:bg-purple-600/30 transition-all"
+                className="mt-4 rounded-xl border border-accent-primary/30 bg-accent-primary/15 px-4 py-2 text-xs font-semibold text-accent-primary transition-all hover:bg-accent-primary/25"
               >
                 Reset Filter
               </button>
@@ -213,7 +213,7 @@ export default function Skills() {
         {/* Footer Counter Badge */}
         {filteredData.length > 0 && (
           <div className="mt-8 text-center text-xs text-text-muted font-mono">
-            Menampilkan <span className="text-purple-400 font-bold">{totalVisibleSkills}</span> teknologi
+            Menampilkan <span className="font-bold text-accent-primary">{totalVisibleSkills}</span> teknologi
           </div>
         )}
       </div>

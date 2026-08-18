@@ -8,7 +8,7 @@ import {
 import "/build/_shared/chunk-CZNGAJO4.js";
 import {
   useLoaderData
-} from "/build/_shared/chunk-TEVHQX2B.js";
+} from "/build/_shared/chunk-R5QVEM6F.js";
 import {
   require_jsx_dev_runtime
 } from "/build/_shared/chunk-CBDF6H27.js";
@@ -51,11 +51,11 @@ function Button({
   disabled = false,
   onClick
 }) {
-  const baseStyles = "group inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full font-bold text-sm tracking-[.01em] transition-all duration-300";
+  const baseStyles = "group inline-flex items-center justify-center gap-2.5 rounded-xl border border-transparent px-5 py-3.5 text-sm font-bold tracking-[.01em] transition-all duration-300 sm:px-6";
   const variants = {
-    primary: "bg-gradient-to-r from-accent-primary to-accent-secondary text-white shadow-lg shadow-indigo-950/30 hover:shadow-glow hover:-translate-y-0.5",
-    secondary: "bg-background-card/75 text-text-primary border border-border hover:border-border-hover hover:bg-background-tertiary hover:-translate-y-0.5",
-    outline: "bg-transparent text-accent-primary border border-accent-primary hover:bg-accent-primary hover:text-white"
+    primary: "bg-gradient-to-r from-accent-primary via-[#7688ff] to-accent-secondary text-white shadow-[0_14px_30px_rgba(89,106,255,.25)] hover:-translate-y-0.5 hover:shadow-glow",
+    secondary: "bg-background-card/75 text-text-primary border-border backdrop-blur-sm hover:-translate-y-0.5 hover:border-border-hover hover:bg-background-tertiary",
+    outline: "bg-transparent border-accent-primary/60 text-accent-primary hover:bg-accent-primary hover:text-white"
   };
   const buttonContent = /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_jsx_dev_runtime.Fragment, { children: [
     children,
@@ -118,7 +118,7 @@ function Button({
 var import_jsx_dev_runtime2 = __toESM(require_jsx_dev_runtime());
 "use client";
 function Hero() {
-  const { hero } = portfolioData;
+  const { hero, stats } = portfolioData;
   const [activeTab, setActiveTab] = (0, import_react.useState)("code");
   const [copied, setCopied] = (0, import_react.useState)(false);
   const codeSnippet = `const developer = {
@@ -128,17 +128,21 @@ function Hero() {
   passion: "Crafting modern web experiences",
   status: "Available for hire"
 };`;
-  const handleCopyCode = () => {
-    navigator.clipboard.writeText(codeSnippet);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2e3);
+  const handleCopyCode = async () => {
+    try {
+      await navigator.clipboard.writeText(codeSnippet);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2e3);
+    } catch (error) {
+      console.error("Tidak dapat menyalin kode:", error);
+    }
   };
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("section", { id: "home", className: "section-shell relative min-h-screen flex items-center pt-28 pb-16 bg-background-primary", children: [
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("section", { id: "home", className: "section-shell relative flex min-h-screen items-center bg-background-primary pb-24 pt-32 lg:pt-36", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "absolute inset-0 -z-10 overflow-hidden pointer-events-none", children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(
         motion.div,
         {
-          className: "absolute -top-10 -left-10 w-96 h-96 bg-purple-600/25 rounded-full blur-[120px]",
+          className: "absolute -left-20 -top-24 h-[28rem] w-[28rem] rounded-full bg-violet-600/25 blur-[130px]",
           animate: { scale: [1, 1.25, 1], opacity: [0.3, 0.6, 0.3] },
           transition: { duration: 8, repeat: Infinity, ease: "easeInOut" }
         },
@@ -146,7 +150,7 @@ function Hero() {
         false,
         {
           fileName: "components/sections/Hero.tsx",
-          lineNumber: 32,
+          lineNumber: 36,
           columnNumber: 9
         },
         this
@@ -154,7 +158,7 @@ function Hero() {
       /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(
         motion.div,
         {
-          className: "absolute top-1/2 right-0 w-[500px] h-[500px] bg-indigo-600/20 rounded-full blur-[140px]",
+          className: "absolute right-0 top-1/3 h-[30rem] w-[30rem] rounded-full bg-sky-500/15 blur-[150px]",
           animate: { scale: [1.2, 1, 1.2], opacity: [0.4, 0.2, 0.4] },
           transition: { duration: 10, repeat: Infinity, ease: "easeInOut" }
         },
@@ -162,7 +166,7 @@ function Hero() {
         false,
         {
           fileName: "components/sections/Hero.tsx",
-          lineNumber: 37,
+          lineNumber: 41,
           columnNumber: 9
         },
         this
@@ -170,7 +174,7 @@ function Hero() {
       /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(
         motion.div,
         {
-          className: "absolute -bottom-10 left-1/3 w-80 h-80 bg-violet-600/20 rounded-full blur-[100px]",
+          className: "absolute -bottom-24 left-1/3 h-80 w-80 rounded-full bg-emerald-400/10 blur-[110px]",
           animate: { scale: [1, 1.3, 1], opacity: [0.2, 0.5, 0.2] },
           transition: { duration: 12, repeat: Infinity, ease: "easeInOut" }
         },
@@ -178,7 +182,7 @@ function Hero() {
         false,
         {
           fileName: "components/sections/Hero.tsx",
-          lineNumber: 42,
+          lineNumber: 46,
           columnNumber: 9
         },
         this
@@ -186,30 +190,30 @@ function Hero() {
       /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(
         "div",
         {
-          className: "absolute inset-0 opacity-[0.04] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]"
+          className: "absolute inset-0 opacity-[0.035] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_65%_60%_at_50%_45%,#000_60%,transparent_100%)]"
         },
         void 0,
         false,
         {
           fileName: "components/sections/Hero.tsx",
-          lineNumber: 49,
+          lineNumber: 53,
           columnNumber: 9
         },
         this
       )
     ] }, void 0, true, {
       fileName: "components/sections/Hero.tsx",
-      lineNumber: 30,
+      lineNumber: 34,
       columnNumber: 7
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "max-w-7xl mx-auto px-6 w-full", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "grid lg:grid-cols-12 gap-12 lg:gap-8 items-center", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "mx-auto w-full max-w-7xl px-5 sm:px-6", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "grid items-center gap-14 lg:grid-cols-12 lg:gap-8", children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(
         motion.div,
         {
           initial: { opacity: 0 },
           animate: { opacity: 1 },
           transition: { duration: 0.8 },
-          className: "lg:col-span-7 space-y-8 lg:pr-8",
+          className: "space-y-8 lg:col-span-7 lg:pr-10",
           children: [
             /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(
               motion.div,
@@ -222,27 +226,27 @@ function Hero() {
                   /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { className: "relative flex h-2.5 w-2.5", children: [
                     /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { className: "animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" }, void 0, false, {
                       fileName: "components/sections/Hero.tsx",
-                      lineNumber: 73,
+                      lineNumber: 77,
                       columnNumber: 19
                     }, this),
                     /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { className: "relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" }, void 0, false, {
                       fileName: "components/sections/Hero.tsx",
-                      lineNumber: 74,
+                      lineNumber: 78,
                       columnNumber: 19
                     }, this)
                   ] }, void 0, true, {
                     fileName: "components/sections/Hero.tsx",
-                    lineNumber: 72,
+                    lineNumber: 76,
                     columnNumber: 17
                   }, this),
                   /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { children: hero.subtitle || "Available for projects" }, void 0, false, {
                     fileName: "components/sections/Hero.tsx",
-                    lineNumber: 76,
+                    lineNumber: 80,
                     columnNumber: 17
                   }, this)
                 ] }, void 0, true, {
                   fileName: "components/sections/Hero.tsx",
-                  lineNumber: 71,
+                  lineNumber: 75,
                   columnNumber: 15
                 }, this)
               },
@@ -250,7 +254,7 @@ function Hero() {
               false,
               {
                 fileName: "components/sections/Hero.tsx",
-                lineNumber: 65,
+                lineNumber: 69,
                 columnNumber: 13
               },
               this
@@ -261,25 +265,32 @@ function Hero() {
                 initial: { opacity: 0, y: 25 },
                 animate: { opacity: 1, y: 0 },
                 transition: { duration: 0.6, delay: 0.15, ease: [0.22, 1, 0.36, 1] },
-                className: "space-y-3",
+                className: "space-y-4",
                 children: [
-                  /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("h2", { className: "text-lg md:text-xl font-semibold text-text-secondary tracking-wide", children: "Halo, saya" }, void 0, false, {
-                    fileName: "components/sections/Hero.tsx",
-                    lineNumber: 89,
-                    columnNumber: 15
-                  }, this),
-                  /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("h1", { className: "text-5xl sm:text-6xl lg:text-7xl font-extrabold text-text-primary tracking-[-.06em] leading-[1.02]", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { className: "gradient-text", children: hero.name }, void 0, false, {
+                  /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "flex items-center gap-3 text-sm font-semibold tracking-wide text-text-secondary", children: [
+                    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { className: "h-px w-8 bg-accent-secondary/70" }, void 0, false, {
+                      fileName: "components/sections/Hero.tsx",
+                      lineNumber: 94,
+                      columnNumber: 17
+                    }, this),
+                    "Halo, saya"
+                  ] }, void 0, true, {
                     fileName: "components/sections/Hero.tsx",
                     lineNumber: 93,
+                    columnNumber: 15
+                  }, this),
+                  /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("h1", { className: "max-w-3xl text-[clamp(3.4rem,8vw,6.8rem)] font-extrabold leading-[.93] tracking-[-.075em] text-text-primary", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { className: "gradient-text", children: hero.name }, void 0, false, {
+                    fileName: "components/sections/Hero.tsx",
+                    lineNumber: 98,
                     columnNumber: 17
                   }, this) }, void 0, false, {
                     fileName: "components/sections/Hero.tsx",
-                    lineNumber: 92,
+                    lineNumber: 97,
                     columnNumber: 15
                   }, this),
-                  /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("p", { className: "text-2xl sm:text-3xl font-bold text-text-primary", children: hero.title }, void 0, false, {
+                  /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("p", { className: "text-xl font-bold tracking-[-.035em] text-text-primary sm:text-2xl", children: hero.title }, void 0, false, {
                     fileName: "components/sections/Hero.tsx",
-                    lineNumber: 97,
+                    lineNumber: 102,
                     columnNumber: 15
                   }, this)
                 ]
@@ -288,7 +299,7 @@ function Hero() {
               true,
               {
                 fileName: "components/sections/Hero.tsx",
-                lineNumber: 83,
+                lineNumber: 87,
                 columnNumber: 13
               },
               this
@@ -299,14 +310,14 @@ function Hero() {
                 initial: { opacity: 0, y: 25 },
                 animate: { opacity: 1, y: 0 },
                 transition: { duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] },
-                className: "text-text-secondary text-base sm:text-lg max-w-xl leading-8 font-medium",
+                className: "max-w-xl text-base font-medium leading-8 text-text-secondary sm:text-lg",
                 children: hero.description
               },
               void 0,
               false,
               {
                 fileName: "components/sections/Hero.tsx",
-                lineNumber: 103,
+                lineNumber: 108,
                 columnNumber: 13
               },
               this
@@ -316,29 +327,58 @@ function Hero() {
               {
                 initial: { opacity: 0, y: 25 },
                 animate: { opacity: 1, y: 0 },
-                transition: { duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] },
+                transition: { duration: 0.6, delay: 0.25, ease: [0.22, 1, 0.36, 1] },
+                className: "flex flex-wrap gap-2",
+                children: ["UI yang bermakna", "Kode yang terukur", "Kolaborasi terbuka"].map((value) => /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { className: "inline-flex items-center gap-2 rounded-full border border-border bg-background-card/55 px-3 py-1.5 text-xs font-semibold text-text-secondary", children: [
+                  /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { className: "h-1.5 w-1.5 rounded-full bg-accent-secondary" }, void 0, false, {
+                    fileName: "components/sections/Hero.tsx",
+                    lineNumber: 125,
+                    columnNumber: 19
+                  }, this),
+                  value
+                ] }, value, true, {
+                  fileName: "components/sections/Hero.tsx",
+                  lineNumber: 124,
+                  columnNumber: 17
+                }, this))
+              },
+              void 0,
+              false,
+              {
+                fileName: "components/sections/Hero.tsx",
+                lineNumber: 117,
+                columnNumber: 13
+              },
+              this
+            ),
+            /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(
+              motion.div,
+              {
+                initial: { opacity: 0, y: 25 },
+                animate: { opacity: 1, y: 0 },
+                transition: { duration: 0.6, delay: 0.32, ease: [0.22, 1, 0.36, 1] },
                 className: "flex flex-wrap items-center gap-4 pt-2",
                 children: [
                   /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(motion.div, { whileHover: { scale: 1.03 }, whileTap: { scale: 0.97 }, children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(Button, { href: "#projects", icon: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("i", { className: "fas fa-arrow-right transition-transform group-hover:translate-x-1" }, void 0, false, {
                     fileName: "components/sections/Hero.tsx",
-                    lineNumber: 120,
+                    lineNumber: 139,
                     columnNumber: 48
                   }, this), children: "Lihat Proyek" }, void 0, false, {
                     fileName: "components/sections/Hero.tsx",
-                    lineNumber: 120,
+                    lineNumber: 139,
                     columnNumber: 17
                   }, this) }, void 0, false, {
                     fileName: "components/sections/Hero.tsx",
-                    lineNumber: 119,
+                    lineNumber: 138,
                     columnNumber: 15
                   }, this),
                   /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(motion.div, { whileHover: { scale: 1.03 }, whileTap: { scale: 0.97 }, children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(Button, { variant: "secondary", href: "#contact", children: "Hubungi Saya" }, void 0, false, {
                     fileName: "components/sections/Hero.tsx",
-                    lineNumber: 126,
+                    lineNumber: 145,
                     columnNumber: 17
                   }, this) }, void 0, false, {
                     fileName: "components/sections/Hero.tsx",
-                    lineNumber: 125,
+                    lineNumber: 144,
                     columnNumber: 15
                   }, this)
                 ]
@@ -347,7 +387,7 @@ function Hero() {
               true,
               {
                 fileName: "components/sections/Hero.tsx",
-                lineNumber: 113,
+                lineNumber: 132,
                 columnNumber: 13
               },
               this
@@ -357,12 +397,12 @@ function Hero() {
               {
                 initial: { opacity: 0, y: 25 },
                 animate: { opacity: 1, y: 0 },
-                transition: { duration: 0.6, delay: 0.4, ease: [0.22, 1, 0.36, 1] },
-                className: "pt-3 flex items-center gap-3",
+                transition: { duration: 0.6, delay: 0.42, ease: [0.22, 1, 0.36, 1] },
+                className: "flex flex-wrap items-center gap-3 pt-3",
                 children: [
                   /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { className: "text-xs uppercase tracking-widest text-text-muted font-semibold mr-2", children: "Hubungkan:" }, void 0, false, {
                     fileName: "components/sections/Hero.tsx",
-                    lineNumber: 139,
+                    lineNumber: 158,
                     columnNumber: 15
                   }, this),
                   [
@@ -378,10 +418,10 @@ function Hero() {
                       "aria-label": social.label,
                       whileHover: { y: -4, scale: 1.1 },
                       whileTap: { scale: 0.95 },
-                      className: "w-10 h-10 surface-card rounded-full flex items-center justify-center text-text-secondary hover:text-white hover:border-accent-primary hover:bg-accent-primary hover:shadow-glow transition-all duration-300",
+                      className: "surface-card flex h-10 w-10 items-center justify-center rounded-full text-text-secondary transition-all duration-300 hover:border-accent-primary hover:bg-accent-primary hover:text-white hover:shadow-glow",
                       children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("i", { className: `${social.icon} text-lg` }, void 0, false, {
                         fileName: "components/sections/Hero.tsx",
-                        lineNumber: 157,
+                        lineNumber: 176,
                         columnNumber: 19
                       }, this)
                     },
@@ -389,7 +429,7 @@ function Hero() {
                     false,
                     {
                       fileName: "components/sections/Hero.tsx",
-                      lineNumber: 147,
+                      lineNumber: 166,
                       columnNumber: 17
                     },
                     this
@@ -400,7 +440,44 @@ function Hero() {
               true,
               {
                 fileName: "components/sections/Hero.tsx",
-                lineNumber: 133,
+                lineNumber: 152,
+                columnNumber: 13
+              },
+              this
+            ),
+            /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(
+              motion.div,
+              {
+                initial: { opacity: 0, y: 20 },
+                animate: { opacity: 1, y: 0 },
+                transition: { duration: 0.6, delay: 0.5, ease: [0.22, 1, 0.36, 1] },
+                className: "grid max-w-xl grid-cols-3 divide-x divide-border rounded-2xl border border-border bg-background-card/35 px-2 py-3 backdrop-blur-sm",
+                children: [
+                  { value: `${stats.years}+`, label: "Tahun berkarya" },
+                  { value: `${stats.projects}+`, label: "Proyek selesai" },
+                  { value: `${stats.clients}+`, label: "Klien percaya" }
+                ].map((item) => /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "px-3 text-center sm:px-4", children: [
+                  /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { className: "block text-lg font-extrabold tracking-[-.05em] text-text-primary sm:text-xl", children: item.value }, void 0, false, {
+                    fileName: "components/sections/Hero.tsx",
+                    lineNumber: 193,
+                    columnNumber: 19
+                  }, this),
+                  /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { className: "mt-0.5 block text-[10px] font-semibold leading-tight text-text-muted sm:text-[11px]", children: item.label }, void 0, false, {
+                    fileName: "components/sections/Hero.tsx",
+                    lineNumber: 194,
+                    columnNumber: 19
+                  }, this)
+                ] }, item.label, true, {
+                  fileName: "components/sections/Hero.tsx",
+                  lineNumber: 192,
+                  columnNumber: 17
+                }, this))
+              },
+              void 0,
+              false,
+              {
+                fileName: "components/sections/Hero.tsx",
+                lineNumber: 181,
                 columnNumber: 13
               },
               this
@@ -411,7 +488,7 @@ function Hero() {
         true,
         {
           fileName: "components/sections/Hero.tsx",
-          lineNumber: 58,
+          lineNumber: 62,
           columnNumber: 11
         },
         this
@@ -422,49 +499,54 @@ function Hero() {
           initial: { opacity: 0, x: 40 },
           animate: { opacity: 1, x: 0 },
           transition: { duration: 0.8, delay: 0.3, ease: "easeOut" },
-          className: "lg:col-span-5 hidden lg:block",
+          className: "hidden lg:col-span-5 lg:block",
           children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "relative group", children: [
-            /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "absolute -inset-1 bg-gradient-to-r from-accent-primary to-accent-secondary rounded-[1.4rem] blur-lg opacity-25 group-hover:opacity-50 transition duration-500" }, void 0, false, {
+            /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "absolute -inset-1 rounded-[1.65rem] bg-gradient-to-br from-accent-primary via-accent-tertiary to-accent-secondary opacity-25 blur-xl transition duration-500 group-hover:opacity-45" }, void 0, false, {
               fileName: "components/sections/Hero.tsx",
-              lineNumber: 172,
+              lineNumber: 209,
               columnNumber: 15
             }, this),
-            /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "relative bg-[#0d1324]/95 backdrop-blur-xl border border-white/10 rounded-[1.3rem] overflow-hidden shadow-2xl", children: [
-              /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "flex items-center justify-between px-4 py-3 bg-white/[0.03] border-b border-white/10 select-none", children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "surface-card relative overflow-hidden rounded-[1.55rem] shadow-2xl", children: [
+              /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/35 to-transparent" }, void 0, false, {
+                fileName: "components/sections/Hero.tsx",
+                lineNumber: 213,
+                columnNumber: 17
+              }, this),
+              /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "flex items-center justify-between border-b border-border bg-white/[0.025] px-4 py-3 select-none", children: [
                 /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "flex items-center gap-2", children: [
                   /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { className: "w-3 h-3 rounded-full bg-red-500/80 inline-block" }, void 0, false, {
                     fileName: "components/sections/Hero.tsx",
-                    lineNumber: 180,
+                    lineNumber: 218,
                     columnNumber: 21
                   }, this),
                   /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { className: "w-3 h-3 rounded-full bg-yellow-500/80 inline-block" }, void 0, false, {
                     fileName: "components/sections/Hero.tsx",
-                    lineNumber: 181,
+                    lineNumber: 219,
                     columnNumber: 21
                   }, this),
                   /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { className: "w-3 h-3 rounded-full bg-green-500/80 inline-block" }, void 0, false, {
                     fileName: "components/sections/Hero.tsx",
-                    lineNumber: 182,
+                    lineNumber: 220,
                     columnNumber: 21
                   }, this)
                 ] }, void 0, true, {
                   fileName: "components/sections/Hero.tsx",
-                  lineNumber: 179,
+                  lineNumber: 217,
                   columnNumber: 19
                 }, this),
-                /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "flex items-center bg-zinc-900/80 rounded-lg p-0.5 border border-white/5 text-xs", children: [
+                /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "flex items-center rounded-lg border border-white/10 bg-black/20 p-0.5 text-xs", children: [
                   /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(
                     "button",
                     {
                       onClick: () => setActiveTab("code"),
                       className: `px-3 py-1 rounded-md transition-all ${activeTab === "code" ? "bg-accent-primary text-white font-medium shadow-sm" : "text-zinc-400 hover:text-white"}`,
-                      children: "developer.ts"
+                      children: "profile.ts"
                     },
                     void 0,
                     false,
                     {
                       fileName: "components/sections/Hero.tsx",
-                      lineNumber: 187,
+                      lineNumber: 225,
                       columnNumber: 21
                     },
                     this
@@ -474,31 +556,31 @@ function Hero() {
                     {
                       onClick: () => setActiveTab("terminal"),
                       className: `px-3 py-1 rounded-md transition-all ${activeTab === "terminal" ? "bg-accent-primary text-white font-medium shadow-sm" : "text-zinc-400 hover:text-white"}`,
-                      children: "bash"
+                      children: "build log"
                     },
                     void 0,
                     false,
                     {
                       fileName: "components/sections/Hero.tsx",
-                      lineNumber: 197,
+                      lineNumber: 235,
                       columnNumber: 21
                     },
                     this
                   )
                 ] }, void 0, true, {
                   fileName: "components/sections/Hero.tsx",
-                  lineNumber: 186,
+                  lineNumber: 224,
                   columnNumber: 19
                 }, this),
                 /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(
                   "button",
                   {
                     onClick: handleCopyCode,
-                    className: "text-zinc-400 hover:text-white transition-colors p-1 rounded",
+                    className: "rounded p-1 text-zinc-400 transition-colors hover:text-white",
                     title: "Copy code",
                     children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("i", { className: copied ? "fas fa-check text-green-400 text-xs" : "far fa-copy text-xs" }, void 0, false, {
                       fileName: "components/sections/Hero.tsx",
-                      lineNumber: 215,
+                      lineNumber: 253,
                       columnNumber: 21
                     }, this)
                   },
@@ -506,17 +588,17 @@ function Hero() {
                   false,
                   {
                     fileName: "components/sections/Hero.tsx",
-                    lineNumber: 210,
+                    lineNumber: 248,
                     columnNumber: 19
                   },
                   this
                 )
               ] }, void 0, true, {
                 fileName: "components/sections/Hero.tsx",
-                lineNumber: 178,
+                lineNumber: 216,
                 columnNumber: 17
               }, this),
-              /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "p-6 font-mono text-xs sm:text-sm leading-relaxed overflow-x-auto min-h-[300px]", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(AnimatePresence, { mode: "wait", children: activeTab === "code" ? /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(
+              /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "min-h-[300px] overflow-x-auto p-6 font-mono text-xs leading-relaxed sm:text-sm", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(AnimatePresence, { mode: "wait", children: activeTab === "code" ? /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(
                 motion.div,
                 {
                   initial: { opacity: 0, y: 10 },
@@ -524,27 +606,27 @@ function Hero() {
                   exit: { opacity: 0, y: -10 },
                   transition: { duration: 0.2 },
                   children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("code", { children: [
-                    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { className: "text-purple-400", children: "const" }, void 0, false, {
+                    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { className: "text-violet-300", children: "const" }, void 0, false, {
                       fileName: "components/sections/Hero.tsx",
-                      lineNumber: 231,
+                      lineNumber: 269,
                       columnNumber: 27
                     }, this),
                     " ",
-                    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { className: "text-blue-400", children: "developer" }, void 0, false, {
+                    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { className: "text-sky-300", children: "developer" }, void 0, false, {
                       fileName: "components/sections/Hero.tsx",
-                      lineNumber: 232,
+                      lineNumber: 270,
                       columnNumber: 27
                     }, this),
                     " = ",
                     "{",
                     /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("br", {}, void 0, false, {
                       fileName: "components/sections/Hero.tsx",
-                      lineNumber: 233,
+                      lineNumber: 271,
                       columnNumber: 27
                     }, this),
-                    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { className: "pl-4 text-zinc-400", children: "name:" }, void 0, false, {
+                    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { className: "pl-4 text-slate-400", children: "name:" }, void 0, false, {
                       fileName: "components/sections/Hero.tsx",
-                      lineNumber: 234,
+                      lineNumber: 272,
                       columnNumber: 27
                     }, this),
                     " ",
@@ -554,18 +636,18 @@ function Hero() {
                       '"'
                     ] }, void 0, true, {
                       fileName: "components/sections/Hero.tsx",
-                      lineNumber: 235,
+                      lineNumber: 273,
                       columnNumber: 27
                     }, this),
                     ",",
                     /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("br", {}, void 0, false, {
                       fileName: "components/sections/Hero.tsx",
-                      lineNumber: 236,
+                      lineNumber: 274,
                       columnNumber: 27
                     }, this),
-                    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { className: "pl-4 text-zinc-400", children: "role:" }, void 0, false, {
+                    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { className: "pl-4 text-slate-400", children: "role:" }, void 0, false, {
                       fileName: "components/sections/Hero.tsx",
-                      lineNumber: 237,
+                      lineNumber: 275,
                       columnNumber: 27
                     }, this),
                     " ",
@@ -575,97 +657,97 @@ function Hero() {
                       '"'
                     ] }, void 0, true, {
                       fileName: "components/sections/Hero.tsx",
-                      lineNumber: 238,
+                      lineNumber: 276,
                       columnNumber: 27
                     }, this),
                     ",",
                     /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("br", {}, void 0, false, {
                       fileName: "components/sections/Hero.tsx",
-                      lineNumber: 239,
+                      lineNumber: 277,
                       columnNumber: 27
                     }, this),
-                    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { className: "pl-4 text-zinc-400", children: "skills:" }, void 0, false, {
+                    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { className: "pl-4 text-slate-400", children: "skills:" }, void 0, false, {
                       fileName: "components/sections/Hero.tsx",
-                      lineNumber: 240,
+                      lineNumber: 278,
                       columnNumber: 27
                     }, this),
                     " [",
                     /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("br", {}, void 0, false, {
                       fileName: "components/sections/Hero.tsx",
-                      lineNumber: 241,
+                      lineNumber: 279,
                       columnNumber: 27
                     }, this),
                     /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { className: "pl-8 text-amber-300", children: '"TypeScript"' }, void 0, false, {
                       fileName: "components/sections/Hero.tsx",
-                      lineNumber: 242,
+                      lineNumber: 280,
                       columnNumber: 27
                     }, this),
                     ",",
                     " ",
                     /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { className: "text-amber-300", children: '"React"' }, void 0, false, {
                       fileName: "components/sections/Hero.tsx",
-                      lineNumber: 243,
+                      lineNumber: 281,
                       columnNumber: 27
                     }, this),
                     ",",
                     " ",
                     /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { className: "text-amber-300", children: '"Next.js"' }, void 0, false, {
                       fileName: "components/sections/Hero.tsx",
-                      lineNumber: 244,
+                      lineNumber: 282,
                       columnNumber: 27
                     }, this),
                     /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("br", {}, void 0, false, {
                       fileName: "components/sections/Hero.tsx",
-                      lineNumber: 245,
+                      lineNumber: 283,
                       columnNumber: 27
                     }, this),
                     /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { className: "pl-4", children: "]," }, void 0, false, {
                       fileName: "components/sections/Hero.tsx",
-                      lineNumber: 246,
+                      lineNumber: 284,
                       columnNumber: 27
                     }, this),
                     /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("br", {}, void 0, false, {
                       fileName: "components/sections/Hero.tsx",
-                      lineNumber: 247,
+                      lineNumber: 285,
                       columnNumber: 27
                     }, this),
-                    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { className: "pl-4 text-zinc-400", children: "passion:" }, void 0, false, {
+                    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { className: "pl-4 text-slate-400", children: "passion:" }, void 0, false, {
                       fileName: "components/sections/Hero.tsx",
-                      lineNumber: 248,
+                      lineNumber: 286,
                       columnNumber: 27
                     }, this),
                     " ",
                     /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { className: "text-emerald-300", children: '"Building impactful UI/UX"' }, void 0, false, {
                       fileName: "components/sections/Hero.tsx",
-                      lineNumber: 249,
+                      lineNumber: 287,
                       columnNumber: 27
                     }, this),
                     ",",
                     /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("br", {}, void 0, false, {
                       fileName: "components/sections/Hero.tsx",
-                      lineNumber: 250,
+                      lineNumber: 288,
                       columnNumber: 27
                     }, this),
-                    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { className: "pl-4 text-zinc-400", children: "availableForHire:" }, void 0, false, {
+                    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { className: "pl-4 text-slate-400", children: "availableForHire:" }, void 0, false, {
                       fileName: "components/sections/Hero.tsx",
-                      lineNumber: 251,
+                      lineNumber: 289,
                       columnNumber: 27
                     }, this),
                     " ",
-                    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { className: "text-orange-400", children: "true" }, void 0, false, {
+                    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { className: "text-amber-300", children: "true" }, void 0, false, {
                       fileName: "components/sections/Hero.tsx",
-                      lineNumber: 252,
+                      lineNumber: 290,
                       columnNumber: 27
                     }, this),
                     /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("br", {}, void 0, false, {
                       fileName: "components/sections/Hero.tsx",
-                      lineNumber: 253,
+                      lineNumber: 291,
                       columnNumber: 27
                     }, this),
                     "};"
                   ] }, void 0, true, {
                     fileName: "components/sections/Hero.tsx",
-                    lineNumber: 230,
+                    lineNumber: 268,
                     columnNumber: 25
                   }, this)
                 },
@@ -673,7 +755,7 @@ function Hero() {
                 false,
                 {
                   fileName: "components/sections/Hero.tsx",
-                  lineNumber: 223,
+                  lineNumber: 261,
                   columnNumber: 23
                 },
                 this
@@ -686,41 +768,41 @@ function Hero() {
                   transition: { duration: 0.2 },
                   className: "space-y-2 text-zinc-300",
                   children: [
-                    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("p", { className: "text-zinc-500", children: "# Run project initial check" }, void 0, false, {
+                    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("p", { className: "text-zinc-500", children: "# starting a focused work session" }, void 0, false, {
                       fileName: "components/sections/Hero.tsx",
-                      lineNumber: 266,
+                      lineNumber: 304,
                       columnNumber: 25
                     }, this),
                     /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("p", { children: [
                       /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { className: "text-emerald-400", children: "~" }, void 0, false, {
                         fileName: "components/sections/Hero.tsx",
-                        lineNumber: 268,
+                        lineNumber: 306,
                         columnNumber: 27
                       }, this),
-                      " pnpm dev"
+                      " npm run dev"
                     ] }, void 0, true, {
                       fileName: "components/sections/Hero.tsx",
-                      lineNumber: 267,
+                      lineNumber: 305,
                       columnNumber: 25
                     }, this),
-                    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("p", { className: "text-zinc-400", children: "ready - started server on 0.0.0.0:3000" }, void 0, false, {
+                    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("p", { className: "text-zinc-400", children: "ready \u2014 ideas turned into interface" }, void 0, false, {
                       fileName: "components/sections/Hero.tsx",
-                      lineNumber: 270,
+                      lineNumber: 308,
                       columnNumber: 25
                     }, this),
-                    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("p", { className: "text-purple-400", children: "info  - Loaded env variables from .env" }, void 0, false, {
+                    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("p", { className: "text-violet-300", children: "info  \u2014 clarity, speed, and care included" }, void 0, false, {
                       fileName: "components/sections/Hero.tsx",
-                      lineNumber: 271,
+                      lineNumber: 309,
                       columnNumber: 25
                     }, this),
-                    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("p", { className: "text-emerald-400", children: "event - compiled client and server successfully in 342ms" }, void 0, false, {
+                    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("p", { className: "text-emerald-400", children: "event \u2014 ready to build something useful" }, void 0, false, {
                       fileName: "components/sections/Hero.tsx",
-                      lineNumber: 272,
+                      lineNumber: 310,
                       columnNumber: 25
                     }, this),
-                    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("p", { className: "animate-pulse text-purple-300", children: "\u258B" }, void 0, false, {
+                    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("p", { className: "animate-pulse text-violet-300", children: "\u258B" }, void 0, false, {
                       fileName: "components/sections/Hero.tsx",
-                      lineNumber: 273,
+                      lineNumber: 311,
                       columnNumber: 25
                     }, this)
                   ]
@@ -729,43 +811,50 @@ function Hero() {
                 true,
                 {
                   fileName: "components/sections/Hero.tsx",
-                  lineNumber: 258,
+                  lineNumber: 296,
                   columnNumber: 23
                 },
                 this
               ) }, void 0, false, {
                 fileName: "components/sections/Hero.tsx",
-                lineNumber: 221,
+                lineNumber: 259,
                 columnNumber: 19
               }, this) }, void 0, false, {
                 fileName: "components/sections/Hero.tsx",
-                lineNumber: 220,
+                lineNumber: 258,
                 columnNumber: 17
               }, this),
-              /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "px-4 py-2 bg-white/[0.02] border-t border-white/5 flex justify-between items-center text-[10px] text-zinc-500", children: [
-                /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { children: "UTF-8" }, void 0, false, {
+              /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "flex items-center justify-between border-t border-border bg-white/[0.02] px-4 py-2 text-[10px] text-zinc-500", children: [
+                /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { className: "inline-flex items-center gap-1.5", children: [
+                  /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { className: "h-1.5 w-1.5 rounded-full bg-emerald-400" }, void 0, false, {
+                    fileName: "components/sections/Hero.tsx",
+                    lineNumber: 319,
+                    columnNumber: 70
+                  }, this),
+                  " Open to collaborate"
+                ] }, void 0, true, {
                   fileName: "components/sections/Hero.tsx",
-                  lineNumber: 281,
+                  lineNumber: 319,
                   columnNumber: 19
                 }, this),
-                /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { children: "TypeScript React" }, void 0, false, {
+                /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { children: "TypeScript \xB7 React" }, void 0, false, {
                   fileName: "components/sections/Hero.tsx",
-                  lineNumber: 282,
+                  lineNumber: 320,
                   columnNumber: 19
                 }, this)
               ] }, void 0, true, {
                 fileName: "components/sections/Hero.tsx",
-                lineNumber: 280,
+                lineNumber: 318,
                 columnNumber: 17
               }, this)
             ] }, void 0, true, {
               fileName: "components/sections/Hero.tsx",
-              lineNumber: 175,
+              lineNumber: 212,
               columnNumber: 15
             }, this)
           ] }, void 0, true, {
             fileName: "components/sections/Hero.tsx",
-            lineNumber: 170,
+            lineNumber: 207,
             columnNumber: 13
           }, this)
         },
@@ -773,24 +862,24 @@ function Hero() {
         false,
         {
           fileName: "components/sections/Hero.tsx",
-          lineNumber: 164,
+          lineNumber: 201,
           columnNumber: 11
         },
         this
       )
     ] }, void 0, true, {
       fileName: "components/sections/Hero.tsx",
-      lineNumber: 55,
+      lineNumber: 59,
       columnNumber: 9
     }, this) }, void 0, false, {
       fileName: "components/sections/Hero.tsx",
-      lineNumber: 54,
+      lineNumber: 58,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(
       motion.div,
       {
-        className: "absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer group",
+        className: "group absolute bottom-6 left-1/2 hidden -translate-x-1/2 cursor-pointer flex-col items-center gap-2 md:flex",
         onClick: () => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" }),
         initial: { opacity: 0, y: -10 },
         animate: { opacity: 1, y: 0 },
@@ -798,10 +887,10 @@ function Hero() {
         children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { className: "text-[11px] font-bold uppercase tracking-[.16em] text-text-muted group-hover:text-accent-secondary transition-colors", children: "Scroll Down" }, void 0, false, {
             fileName: "components/sections/Hero.tsx",
-            lineNumber: 299,
+            lineNumber: 337,
             columnNumber: 9
           }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "w-5 h-9 border-2 border-white/20 group-hover:border-accent-secondary/50 rounded-full flex justify-center p-1 transition-colors", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(
+          /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "flex h-9 w-5 justify-center rounded-full border-2 border-white/20 p-1 transition-colors group-hover:border-accent-secondary/50", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(
             motion.div,
             {
               className: "w-1 h-2 bg-accent-secondary rounded-full",
@@ -812,13 +901,13 @@ function Hero() {
             false,
             {
               fileName: "components/sections/Hero.tsx",
-              lineNumber: 303,
+              lineNumber: 341,
               columnNumber: 11
             },
             this
           ) }, void 0, false, {
             fileName: "components/sections/Hero.tsx",
-            lineNumber: 302,
+            lineNumber: 340,
             columnNumber: 9
           }, this)
         ]
@@ -827,14 +916,14 @@ function Hero() {
       true,
       {
         fileName: "components/sections/Hero.tsx",
-        lineNumber: 292,
+        lineNumber: 330,
         columnNumber: 7
       },
       this
     )
   ] }, void 0, true, {
     fileName: "components/sections/Hero.tsx",
-    lineNumber: 28,
+    lineNumber: 32,
     columnNumber: 5
   }, this);
 }
@@ -7594,7 +7683,7 @@ function About() {
           whileInView: { opacity: 1, y: 0 },
           viewport: { once: true },
           transition: { duration: 0.6 },
-          className: "flex flex-col items-center text-center mb-16 space-y-4",
+          className: "mb-16 flex flex-col items-center space-y-4 text-center sm:mb-20",
           children: [
             /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { className: "eyebrow", children: [
               /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("i", { className: "fas fa-user-circle text-xs text-purple-400" }, void 0, false, {
@@ -7612,7 +7701,7 @@ function About() {
               lineNumber: 34,
               columnNumber: 11
             }, this),
-            /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("h2", { className: "text-4xl sm:text-5xl lg:text-6xl font-extrabold text-text-primary tracking-[-.05em]", children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("h2", { className: "section-heading", children: [
               "Tentang ",
               /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("span", { className: "gradient-text", children: "Saya" }, void 0, false, {
                 fileName: "components/sections/About.tsx",
@@ -7624,7 +7713,7 @@ function About() {
               lineNumber: 39,
               columnNumber: 11
             }, this),
-            /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("p", { className: "text-text-secondary text-base sm:text-lg max-w-2xl font-normal leading-relaxed", children: "Mengenal lebih dekat latar belakang, passion, dan pengalaman saya dalam mengembangkan perangkat lunak berkualitas." }, void 0, false, {
+            /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("p", { className: "section-copy max-w-2xl", children: "Mengenal lebih dekat latar belakang, passion, dan pengalaman saya dalam mengembangkan perangkat lunak berkualitas." }, void 0, false, {
               fileName: "components/sections/About.tsx",
               lineNumber: 43,
               columnNumber: 11
@@ -7672,7 +7761,7 @@ function About() {
                 },
                 this
               ),
-              /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { className: "surface-card relative w-full h-full rounded-3xl p-6 backdrop-blur-xl flex flex-col items-center justify-center shadow-2xl overflow-hidden group", children: [
+              /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { className: "surface-card group relative flex h-full w-full flex-col items-center justify-center overflow-hidden rounded-3xl p-6 shadow-2xl backdrop-blur-xl", children: [
                 /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { className: "w-28 h-28 sm:w-32 sm:h-32 rounded-2xl bg-gradient-to-br from-purple-500/20 to-indigo-500/20 border border-purple-500/30 flex items-center justify-center text-purple-400 text-5xl sm:text-6xl mb-4 group-hover:scale-110 transition-transform duration-500", children: /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("i", { className: "fas fa-terminal" }, void 0, false, {
                   fileName: "components/sections/About.tsx",
                   lineNumber: 76,
@@ -7832,7 +7921,7 @@ function About() {
                   transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.15 },
                   className: "grid grid-cols-3 gap-3 sm:gap-6 py-2",
                   children: [
-                    /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { className: "bg-background-card/40 border border-white/10 hover:border-purple-500/40 rounded-2xl p-4 text-center backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(168,85,247,0.2)]", children: [
+                    /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { className: "surface-card rounded-2xl p-4 text-center backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-accent-primary hover:shadow-glow", children: [
                       /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(
                         "span",
                         {
@@ -7862,7 +7951,7 @@ function About() {
                       lineNumber: 150,
                       columnNumber: 15
                     }, this),
-                    /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { className: "bg-background-card/40 border border-white/10 hover:border-purple-500/40 rounded-2xl p-4 text-center backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(168,85,247,0.2)]", children: [
+                    /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { className: "surface-card rounded-2xl p-4 text-center backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-accent-primary hover:shadow-glow", children: [
                       /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(
                         "span",
                         {
@@ -7892,7 +7981,7 @@ function About() {
                       lineNumber: 163,
                       columnNumber: 15
                     }, this),
-                    /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { className: "bg-background-card/40 border border-white/10 hover:border-purple-500/40 rounded-2xl p-4 text-center backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(168,85,247,0.2)]", children: [
+                    /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { className: "surface-card rounded-2xl p-4 text-center backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-accent-primary hover:shadow-glow", children: [
                       /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(
                         "span",
                         {
@@ -8036,9 +8125,9 @@ function SkillCard({ skill, index }) {
       whileInView: { opacity: 1, y: 0 },
       viewport: { once: true },
       transition: { duration: 0.5, delay: index * 0.05 },
-      className: "surface-card rounded-2xl p-6 text-center hover:border-accent-primary hover:-translate-y-1 hover:shadow-glow transition-all duration-300 group",
+      className: "surface-card group rounded-2xl p-5 text-center transition-all duration-300 hover:-translate-y-1 hover:border-accent-primary hover:shadow-glow sm:p-6",
       children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("div", { className: "w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-accent-primary/15 to-accent-secondary/15 border border-white/5 rounded-2xl flex items-center justify-center text-2xl group-hover:rotate-6 transition-transform", children: /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("i", { className: `${skill.icon} gradient-text` }, void 0, false, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("div", { className: "mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl border border-accent-primary/15 bg-gradient-to-br from-accent-primary/15 to-accent-secondary/15 text-2xl transition-transform group-hover:rotate-6 group-hover:scale-105", children: /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("i", { className: `${skill.icon} gradient-text` }, void 0, false, {
           fileName: "components/ui/SkillCard.tsx",
           lineNumber: 48,
           columnNumber: 9
@@ -8047,12 +8136,12 @@ function SkillCard({ skill, index }) {
           lineNumber: 47,
           columnNumber: 7
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("span", { className: "block font-semibold text-text-primary mb-3", children: skill.name }, void 0, false, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("span", { className: "mb-3 block font-semibold tracking-[-.02em] text-text-primary", children: skill.name }, void 0, false, {
           fileName: "components/ui/SkillCard.tsx",
           lineNumber: 52,
           columnNumber: 7
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("div", { className: "h-1.5 bg-background-tertiary rounded-full overflow-hidden", children: /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(
+        /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("div", { className: "h-1.5 overflow-hidden rounded-full bg-background-tertiary", children: /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(
           motion.div,
           {
             className: "h-full bg-gradient-to-r from-accent-primary to-accent-secondary rounded-full",
@@ -8157,7 +8246,7 @@ function Skills() {
           whileInView: { opacity: 1, y: 0 },
           viewport: { once: true },
           transition: { duration: 0.6 },
-          className: "flex flex-col items-center text-center mb-12 space-y-4",
+          className: "mb-12 flex flex-col items-center space-y-4 text-center sm:mb-14",
           children: [
             /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "eyebrow", children: [
               /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("i", { className: "fas fa-code text-xs text-purple-400" }, void 0, false, {
@@ -8175,7 +8264,7 @@ function Skills() {
               lineNumber: 82,
               columnNumber: 11
             }, this),
-            /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("h2", { className: "text-4xl sm:text-5xl lg:text-6xl font-extrabold text-text-primary tracking-[-.05em]", children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("h2", { className: "section-heading", children: [
               "Keahlian ",
               /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("span", { className: "gradient-text", children: "& Teknologi" }, void 0, false, {
                 fileName: "components/sections/Skills.tsx",
@@ -8187,7 +8276,7 @@ function Skills() {
               lineNumber: 87,
               columnNumber: 11
             }, this),
-            /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("p", { className: "text-text-secondary text-base sm:text-lg max-w-2xl font-normal leading-relaxed", children: "Kumpulan bahasa pemrograman, framework, dan tools yang saya gunakan untuk membangun solusi digital yang responsif, cepat, dan terstruktur." }, void 0, false, {
+            /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("p", { className: "section-copy max-w-2xl", children: "Kumpulan bahasa pemrograman, framework, dan tools yang saya gunakan untuk membangun solusi digital yang responsif, cepat, dan terstruktur." }, void 0, false, {
               fileName: "components/sections/Skills.tsx",
               lineNumber: 91,
               columnNumber: 11
@@ -8210,15 +8299,15 @@ function Skills() {
           whileInView: { opacity: 1, y: 0 },
           viewport: { once: true },
           transition: { duration: 0.6, delay: 0.1 },
-          className: "flex flex-col md:flex-row items-center justify-between gap-4 mb-12",
+          className: "mb-12 flex flex-col items-center justify-between gap-4 md:flex-row",
           children: [
-            /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "flex flex-wrap items-center justify-center gap-2 bg-background-card/60 p-1.5 rounded-2xl border border-white/10 backdrop-blur-md w-full md:w-auto", children: categories.map((cat) => {
+            /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "surface-card flex w-full flex-wrap items-center justify-center gap-2 rounded-2xl p-1.5 backdrop-blur-md md:w-auto", children: categories.map((cat) => {
               const isActive = selectedCategory === cat.toLowerCase();
               return /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(
                 "button",
                 {
                   onClick: () => setSelectedCategory(cat.toLowerCase()),
-                  className: `px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all duration-300 capitalize ${isActive ? "bg-purple-600 text-white shadow-[0_0_15px_rgba(168,85,247,0.4)]" : "text-text-secondary hover:text-white hover:bg-white/5"}`,
+                  className: `px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all duration-300 capitalize ${isActive ? "bg-accent-primary text-white shadow-glow" : "text-text-secondary hover:bg-white/5 hover:text-text-primary"}`,
                   children: cat === "all" ? "Semua Skill" : cat
                 },
                 cat,
@@ -8248,7 +8337,7 @@ function Skills() {
                   value: searchQuery,
                   onChange: (e) => setSearchQuery(e.target.value),
                   placeholder: "Cari skill...",
-                  className: "w-full bg-background-card/60 border border-white/10 rounded-xl pl-10 pr-4 py-2 text-sm text-text-primary placeholder:text-text-muted focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/50 backdrop-blur-md transition-all"
+                  className: "input-field py-2.5 pl-10 pr-10 text-sm placeholder:text-text-muted backdrop-blur-md"
                 },
                 void 0,
                 false,
@@ -8263,7 +8352,7 @@ function Skills() {
                 "button",
                 {
                   onClick: () => setSearchQuery(""),
-                  className: "absolute right-3 top-1/2 -translate-y-1/2 text-text-muted hover:text-white text-xs",
+                  className: "absolute right-3 top-1/2 -translate-y-1/2 text-xs text-text-muted hover:text-text-primary",
                   children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("i", { className: "fas fa-times" }, void 0, false, {
                     fileName: "components/sections/Skills.tsx",
                     lineNumber: 139,
@@ -8306,11 +8395,11 @@ function Skills() {
           children: filteredData.map((category) => /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(
             "div",
             {
-              className: "bg-background-card/30 border border-white/5 rounded-3xl p-6 sm:p-8 backdrop-blur-xl",
+              className: "surface-card rounded-3xl p-6 backdrop-blur-xl sm:p-8",
               children: [
-                /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "flex items-center justify-between mb-6 pb-4 border-b border-white/5", children: [
+                /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "mb-6 flex items-center justify-between border-b border-border pb-4", children: [
                   /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("h3", { className: "text-xl sm:text-2xl font-bold text-text-primary flex items-center gap-3", children: [
-                    /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("span", { className: "p-2 rounded-xl bg-purple-500/10 text-purple-400 border border-purple-500/20 text-lg", children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("i", { className: category.icon }, void 0, false, {
+                    /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("span", { className: "rounded-xl border border-accent-primary/20 bg-accent-primary/10 p-2 text-lg text-accent-primary", children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("i", { className: category.icon }, void 0, false, {
                       fileName: "components/sections/Skills.tsx",
                       lineNumber: 165,
                       columnNumber: 25
@@ -8325,7 +8414,7 @@ function Skills() {
                     lineNumber: 163,
                     columnNumber: 21
                   }, this),
-                  /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("span", { className: "text-xs text-text-muted font-mono bg-white/5 px-3 py-1 rounded-full border border-white/5", children: [
+                  /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("span", { className: "rounded-full border border-border bg-background-tertiary/45 px-3 py-1 font-mono text-xs text-text-muted", children: [
                     category.skills.length,
                     " Tech"
                   ] }, void 0, true, {
@@ -8391,7 +8480,7 @@ function Skills() {
           {
             initial: { opacity: 0 },
             animate: { opacity: 1 },
-            className: "text-center py-16 bg-background-card/20 rounded-3xl border border-white/5",
+            className: "surface-card rounded-3xl py-16 text-center",
             children: [
               /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("i", { className: "fas fa-search-minus text-4xl text-text-muted mb-4 block" }, void 0, false, {
                 fileName: "components/sections/Skills.tsx",
@@ -8415,7 +8504,7 @@ function Skills() {
                     setSelectedCategory("all");
                     setSearchQuery("");
                   },
-                  className: "mt-4 px-4 py-2 bg-purple-600/20 border border-purple-500/30 text-purple-300 rounded-xl text-xs font-semibold hover:bg-purple-600/30 transition-all",
+                  className: "mt-4 rounded-xl border border-accent-primary/30 bg-accent-primary/15 px-4 py-2 text-xs font-semibold text-accent-primary transition-all hover:bg-accent-primary/25",
                   children: "Reset Filter"
                 },
                 void 0,
@@ -8445,7 +8534,7 @@ function Skills() {
       }, this),
       filteredData.length > 0 && /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "mt-8 text-center text-xs text-text-muted font-mono", children: [
         "Menampilkan ",
-        /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("span", { className: "text-purple-400 font-bold", children: totalVisibleSkills }, void 0, false, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("span", { className: "font-bold text-accent-primary", children: totalVisibleSkills }, void 0, false, {
           fileName: "components/sections/Skills.tsx",
           lineNumber: 216,
           columnNumber: 25
@@ -8474,147 +8563,240 @@ var import_react5 = __toESM(require_react());
 // components/ui/ProjectCard.tsx
 var import_jsx_dev_runtime6 = __toESM(require_jsx_dev_runtime());
 "use client";
+var visualByCategory = {
+  web: {
+    label: "Web experience",
+    gradient: "from-indigo-500/35 via-blue-500/10 to-cyan-400/20",
+    glow: "bg-indigo-400/35",
+    iconSurface: "from-indigo-400/25 to-cyan-300/20 text-cyan-50"
+  },
+  mobile: {
+    label: "Mobile product",
+    gradient: "from-fuchsia-500/30 via-violet-500/15 to-indigo-400/20",
+    glow: "bg-fuchsia-400/30",
+    iconSurface: "from-fuchsia-400/25 to-violet-300/20 text-fuchsia-50"
+  },
+  ui: {
+    label: "Interface system",
+    gradient: "from-emerald-400/25 via-teal-500/15 to-sky-400/20",
+    glow: "bg-emerald-300/30",
+    iconSurface: "from-emerald-300/25 to-sky-300/20 text-emerald-50"
+  }
+};
 function ProjectCard({ project, index }) {
+  const visual = visualByCategory[project.category];
+  const links = [
+    project.links.live && { href: project.links.live, icon: "fas fa-arrow-up-right-from-square", label: "Live site" },
+    project.links.github && { href: project.links.github, icon: "fab fa-github", label: "Source" },
+    project.links.behance && { href: project.links.behance, icon: "fab fa-behance", label: "Case study" }
+  ].filter(Boolean);
   return /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(
-    motion.div,
+    motion.article,
     {
       initial: { opacity: 0, y: 50 },
       whileInView: { opacity: 1, y: 0 },
       viewport: { once: true, margin: "-50px" },
       transition: { duration: 0.5, delay: index * 0.1 },
       whileHover: { y: -8 },
-      className: "surface-card rounded-[1.35rem] overflow-hidden group hover:border-accent-primary hover:shadow-glow transition-all duration-300",
+      className: "surface-card group relative flex h-full flex-col overflow-hidden rounded-[1.45rem] transition-all duration-300 hover:border-accent-primary hover:shadow-glow",
       "data-category": project.category,
       children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "h-52 bg-background-tertiary flex items-center justify-center relative overflow-hidden", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(56,215,189,.3),transparent_42%),radial-gradient(circle_at_20%_10%,rgba(117,103,248,.42),transparent_48%)] group-hover:scale-110 transition-transform duration-700" }, void 0, false, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "relative h-56 overflow-hidden border-b border-border", children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: `absolute inset-0 bg-gradient-to-br ${visual.gradient}` }, void 0, false, {
             fileName: "components/ui/ProjectCard.tsx",
-            lineNumber: 24,
+            lineNumber: 57,
             columnNumber: 9
           }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("span", { className: "absolute top-4 left-4 rounded-full bg-slate-950/35 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-white/75 border border-white/10", children: project.category }, void 0, false, {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "absolute inset-0 opacity-30 [background-image:linear-gradient(rgba(255,255,255,.14)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.14)_1px,transparent_1px)] [background-size:24px_24px]" }, void 0, false, {
             fileName: "components/ui/ProjectCard.tsx",
-            lineNumber: 25,
+            lineNumber: 58,
             columnNumber: 9
           }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("i", { className: `${project.icon} relative text-5xl text-white/80 group-hover:scale-110 group-hover:-rotate-6 transition-transform duration-500` }, void 0, false, {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: `absolute -right-8 -top-10 h-44 w-44 rounded-full blur-3xl transition-transform duration-700 group-hover:scale-125 ${visual.glow}` }, void 0, false, {
             fileName: "components/ui/ProjectCard.tsx",
-            lineNumber: 26,
+            lineNumber: 59,
             columnNumber: 9
           }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "absolute inset-0 bg-background-primary/90 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300", children: [
-            project.links.live && /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(
-              "a",
-              {
-                href: project.links.live,
-                target: "_blank",
-                rel: "noopener noreferrer",
-                className: "w-12 h-12 bg-accent-primary rounded-full flex items-center justify-center text-white hover:bg-accent-secondary transition-colors",
-                "aria-label": "View live",
-                children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("i", { className: "fas fa-external-link-alt" }, void 0, false, {
-                  fileName: "components/ui/ProjectCard.tsx",
-                  lineNumber: 38,
-                  columnNumber: 15
-                }, this)
-              },
-              void 0,
-              false,
-              {
-                fileName: "components/ui/ProjectCard.tsx",
-                lineNumber: 31,
-                columnNumber: 13
-              },
-              this
-            ),
-            project.links.github && /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(
-              "a",
-              {
-                href: project.links.github,
-                target: "_blank",
-                rel: "noopener noreferrer",
-                className: "w-12 h-12 bg-accent-primary rounded-full flex items-center justify-center text-white hover:bg-accent-secondary transition-colors",
-                "aria-label": "View code",
-                children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("i", { className: "fab fa-github" }, void 0, false, {
-                  fileName: "components/ui/ProjectCard.tsx",
-                  lineNumber: 49,
-                  columnNumber: 15
-                }, this)
-              },
-              void 0,
-              false,
-              {
-                fileName: "components/ui/ProjectCard.tsx",
-                lineNumber: 42,
-                columnNumber: 13
-              },
-              this
-            ),
-            project.links.behance && /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(
-              "a",
-              {
-                href: project.links.behance,
-                target: "_blank",
-                rel: "noopener noreferrer",
-                className: "w-12 h-12 bg-accent-primary rounded-full flex items-center justify-center text-white hover:bg-accent-secondary transition-colors",
-                "aria-label": "View on Behance",
-                children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("i", { className: "fab fa-behance" }, void 0, false, {
-                  fileName: "components/ui/ProjectCard.tsx",
-                  lineNumber: 60,
-                  columnNumber: 15
-                }, this)
-              },
-              void 0,
-              false,
-              {
-                fileName: "components/ui/ProjectCard.tsx",
-                lineNumber: 53,
-                columnNumber: 13
-              },
-              this
-            )
+          /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "absolute inset-x-5 top-5 flex items-center justify-between", children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("span", { className: "rounded-full border border-white/15 bg-slate-950/25 px-3 py-1 text-[10px] font-bold uppercase tracking-[.14em] text-white/85 backdrop-blur-sm", children: visual.label }, void 0, false, {
+              fileName: "components/ui/ProjectCard.tsx",
+              lineNumber: 62,
+              columnNumber: 11
+            }, this),
+            /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("span", { className: "font-mono text-xs font-medium text-white/60", children: [
+              "0",
+              index + 1
+            ] }, void 0, true, {
+              fileName: "components/ui/ProjectCard.tsx",
+              lineNumber: 65,
+              columnNumber: 11
+            }, this)
           ] }, void 0, true, {
             fileName: "components/ui/ProjectCard.tsx",
-            lineNumber: 29,
+            lineNumber: 61,
             columnNumber: 9
-          }, this)
-        ] }, void 0, true, {
-          fileName: "components/ui/ProjectCard.tsx",
-          lineNumber: 23,
-          columnNumber: 7
-        }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "p-6", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("h3", { className: "text-xl font-bold text-text-primary mb-2", children: project.title }, void 0, false, {
+          }, this),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "absolute inset-x-5 bottom-0 h-32 rounded-t-2xl border border-b-0 border-white/20 bg-slate-950/30 p-3 shadow-2xl backdrop-blur-md transition-transform duration-500 group-hover:-translate-y-2", children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "flex items-center gap-1.5 border-b border-white/10 pb-2", children: [
+              /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("span", { className: "h-1.5 w-1.5 rounded-full bg-rose-300/80" }, void 0, false, {
+                fileName: "components/ui/ProjectCard.tsx",
+                lineNumber: 70,
+                columnNumber: 13
+              }, this),
+              /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("span", { className: "h-1.5 w-1.5 rounded-full bg-amber-200/80" }, void 0, false, {
+                fileName: "components/ui/ProjectCard.tsx",
+                lineNumber: 71,
+                columnNumber: 13
+              }, this),
+              /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("span", { className: "h-1.5 w-1.5 rounded-full bg-emerald-300/80" }, void 0, false, {
+                fileName: "components/ui/ProjectCard.tsx",
+                lineNumber: 72,
+                columnNumber: 13
+              }, this),
+              /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("span", { className: "ml-2 h-1.5 w-16 rounded-full bg-white/10" }, void 0, false, {
+                fileName: "components/ui/ProjectCard.tsx",
+                lineNumber: 73,
+                columnNumber: 13
+              }, this)
+            ] }, void 0, true, {
+              fileName: "components/ui/ProjectCard.tsx",
+              lineNumber: 69,
+              columnNumber: 11
+            }, this),
+            /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "grid grid-cols-[1.2fr_.8fr] gap-2 pt-3", children: [
+              /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "space-y-2", children: [
+                /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "h-2.5 w-4/5 rounded-full bg-white/70" }, void 0, false, {
+                  fileName: "components/ui/ProjectCard.tsx",
+                  lineNumber: 77,
+                  columnNumber: 15
+                }, this),
+                /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "h-1.5 w-full rounded-full bg-white/18" }, void 0, false, {
+                  fileName: "components/ui/ProjectCard.tsx",
+                  lineNumber: 78,
+                  columnNumber: 15
+                }, this),
+                /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "h-1.5 w-3/5 rounded-full bg-white/12" }, void 0, false, {
+                  fileName: "components/ui/ProjectCard.tsx",
+                  lineNumber: 79,
+                  columnNumber: 15
+                }, this)
+              ] }, void 0, true, {
+                fileName: "components/ui/ProjectCard.tsx",
+                lineNumber: 76,
+                columnNumber: 13
+              }, this),
+              /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "rounded-lg border border-white/10 bg-white/[.08] p-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "h-full rounded-md bg-gradient-to-br from-white/20 to-transparent" }, void 0, false, {
+                fileName: "components/ui/ProjectCard.tsx",
+                lineNumber: 82,
+                columnNumber: 15
+              }, this) }, void 0, false, {
+                fileName: "components/ui/ProjectCard.tsx",
+                lineNumber: 81,
+                columnNumber: 13
+              }, this)
+            ] }, void 0, true, {
+              fileName: "components/ui/ProjectCard.tsx",
+              lineNumber: 75,
+              columnNumber: 11
+            }, this)
+          ] }, void 0, true, {
             fileName: "components/ui/ProjectCard.tsx",
             lineNumber: 68,
             columnNumber: 9
           }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("p", { className: "text-text-secondary text-sm mb-4 line-clamp-2", children: project.description }, void 0, false, {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: `absolute bottom-5 left-8 grid h-12 w-12 place-items-center rounded-2xl border border-white/20 bg-gradient-to-br shadow-lg backdrop-blur-md transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110 ${visual.iconSurface}`, children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("i", { className: `${project.icon} text-xl` }, void 0, false, {
             fileName: "components/ui/ProjectCard.tsx",
-            lineNumber: 71,
+            lineNumber: 88,
+            columnNumber: 11
+          }, this) }, void 0, false, {
+            fileName: "components/ui/ProjectCard.tsx",
+            lineNumber: 87,
+            columnNumber: 9
+          }, this)
+        ] }, void 0, true, {
+          fileName: "components/ui/ProjectCard.tsx",
+          lineNumber: 56,
+          columnNumber: 7
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "flex flex-1 flex-col p-6", children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "mb-3 flex items-center justify-between gap-3", children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("span", { className: "text-[10px] font-bold uppercase tracking-[.16em] text-accent-secondary", children: "Pilihan karya" }, void 0, false, {
+              fileName: "components/ui/ProjectCard.tsx",
+              lineNumber: 94,
+              columnNumber: 11
+            }, this),
+            /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("span", { className: "h-px flex-1 bg-border" }, void 0, false, {
+              fileName: "components/ui/ProjectCard.tsx",
+              lineNumber: 95,
+              columnNumber: 11
+            }, this)
+          ] }, void 0, true, {
+            fileName: "components/ui/ProjectCard.tsx",
+            lineNumber: 93,
             columnNumber: 9
           }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "flex flex-wrap gap-2", children: project.tags.map((tag) => /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(
+          /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("h3", { className: "text-xl font-bold tracking-[-.035em] text-text-primary", children: project.title }, void 0, false, {
+            fileName: "components/ui/ProjectCard.tsx",
+            lineNumber: 97,
+            columnNumber: 9
+          }, this),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("p", { className: "mt-2 text-sm leading-6 text-text-secondary", children: project.description }, void 0, false, {
+            fileName: "components/ui/ProjectCard.tsx",
+            lineNumber: 98,
+            columnNumber: 9
+          }, this),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "mt-5 flex flex-wrap gap-2", children: project.tags.map((tag) => /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(
             "span",
             {
-              className: "px-3 py-1 bg-background-tertiary text-accent-primary text-[11px] font-bold rounded-full",
+              className: "rounded-full border border-border bg-background-tertiary/60 px-2.5 py-1 text-[10px] font-bold text-text-secondary",
               children: tag
             },
             tag,
             false,
             {
               fileName: "components/ui/ProjectCard.tsx",
-              lineNumber: 78,
+              lineNumber: 102,
               columnNumber: 13
             },
             this
           )) }, void 0, false, {
             fileName: "components/ui/ProjectCard.tsx",
-            lineNumber: 76,
+            lineNumber: 100,
             columnNumber: 9
+          }, this),
+          links.length > 0 && /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "mt-6 flex items-center gap-2 border-t border-border pt-4", children: links.map((link) => /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(
+            "a",
+            {
+              href: link.href,
+              target: "_blank",
+              rel: "noopener noreferrer",
+              className: "inline-flex items-center gap-1.5 rounded-lg px-2 py-1.5 text-xs font-bold text-text-secondary transition-colors hover:bg-accent-primary/10 hover:text-accent-primary",
+              "aria-label": `${link.label}: ${project.title}`,
+              children: [
+                /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("i", { className: `${link.icon} text-xs` }, void 0, false, {
+                  fileName: "components/ui/ProjectCard.tsx",
+                  lineNumber: 122,
+                  columnNumber: 17
+                }, this),
+                link.label
+              ]
+            },
+            link.label,
+            true,
+            {
+              fileName: "components/ui/ProjectCard.tsx",
+              lineNumber: 114,
+              columnNumber: 15
+            },
+            this
+          )) }, void 0, false, {
+            fileName: "components/ui/ProjectCard.tsx",
+            lineNumber: 112,
+            columnNumber: 11
           }, this)
         ] }, void 0, true, {
           fileName: "components/ui/ProjectCard.tsx",
-          lineNumber: 67,
+          lineNumber: 92,
           columnNumber: 7
         }, this)
       ]
@@ -8623,7 +8805,7 @@ function ProjectCard({ project, index }) {
     true,
     {
       fileName: "components/ui/ProjectCard.tsx",
-      lineNumber: 13,
+      lineNumber: 46,
       columnNumber: 5
     },
     this
@@ -8685,7 +8867,7 @@ function Projects() {
           whileInView: { opacity: 1, y: 0 },
           viewport: { once: true },
           transition: { duration: 0.6 },
-          className: "flex flex-col items-center text-center mb-12 space-y-4",
+          className: "mb-12 flex flex-col items-center space-y-4 text-center sm:mb-14",
           children: [
             /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("div", { className: "eyebrow", children: [
               /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("i", { className: "fas fa-folder-open text-xs text-purple-400" }, void 0, false, {
@@ -8703,7 +8885,7 @@ function Projects() {
               lineNumber: 57,
               columnNumber: 11
             }, this),
-            /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("h2", { className: "text-4xl sm:text-5xl lg:text-6xl font-extrabold text-text-primary tracking-[-.05em]", children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("h2", { className: "section-heading", children: [
               "Portofolio ",
               /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("span", { className: "gradient-text", children: "Proyek" }, void 0, false, {
                 fileName: "components/sections/Projects.tsx",
@@ -8715,7 +8897,7 @@ function Projects() {
               lineNumber: 62,
               columnNumber: 11
             }, this),
-            /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("p", { className: "text-text-secondary text-base sm:text-lg max-w-2xl font-normal leading-relaxed", children: "Jelajahi berbagai proyek web, aplikasi mobile, dan desain antarmuka yang telah saya kembangkan dengan standar kualitas terbaik." }, void 0, false, {
+            /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("p", { className: "section-copy max-w-2xl", children: "Jelajahi berbagai proyek web, aplikasi mobile, dan desain antarmuka yang telah saya kembangkan dengan standar kualitas terbaik." }, void 0, false, {
               fileName: "components/sections/Projects.tsx",
               lineNumber: 66,
               columnNumber: 11
@@ -8739,7 +8921,7 @@ function Projects() {
           viewport: { once: true },
           transition: { duration: 0.6, delay: 0.1 },
           className: "flex justify-center mb-12",
-          children: /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("div", { className: "inline-flex flex-wrap items-center justify-center gap-1.5 p-1.5 bg-background-card/80 border border-white/10 rounded-2xl backdrop-blur-md", children: filters.map((filter) => {
+          children: /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("div", { className: "surface-card inline-flex flex-wrap items-center justify-center gap-1.5 rounded-2xl p-1.5 backdrop-blur-md", children: filters.map((filter) => {
             const isActive = activeFilter === filter.value;
             const count = filterCounts[filter.value] || 0;
             return /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)(
@@ -8752,7 +8934,7 @@ function Projects() {
                     motion.div,
                     {
                       layoutId: "activeProjectFilter",
-                      className: "absolute inset-0 bg-purple-600 rounded-xl shadow-[0_0_20px_rgba(168,85,247,0.4)]",
+                      className: "absolute inset-0 rounded-xl bg-accent-primary shadow-glow",
                       transition: { type: "spring", stiffness: 380, damping: 30 }
                     },
                     void 0,
@@ -8772,7 +8954,7 @@ function Projects() {
                   /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)(
                     "span",
                     {
-                      className: `relative z-10 px-2 py-0.5 rounded-full text-[10px] font-mono transition-colors ${isActive ? "bg-white/20 text-white" : "bg-white/5 text-text-muted"}`,
+                      className: `relative z-10 px-2 py-0.5 rounded-full text-[10px] font-mono transition-colors ${isActive ? "bg-white/20 text-white" : "bg-background-tertiary/70 text-text-muted"}`,
                       children: count
                     },
                     void 0,
@@ -8810,7 +8992,7 @@ function Projects() {
         },
         this
       ),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)(motion.div, { layout: true, className: "grid md:grid-cols-2 lg:grid-cols-3 gap-8", children: /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)(AnimatePresence, { mode: "popLayout", children: filteredProjects.map((project, index) => /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)(
+      /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)(motion.div, { layout: true, className: "grid gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8", children: /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)(AnimatePresence, { mode: "popLayout", children: filteredProjects.map((project, index) => /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)(
         motion.div,
         {
           layout: true,
@@ -8846,9 +9028,9 @@ function Projects() {
         {
           initial: { opacity: 0, y: 10 },
           animate: { opacity: 1, y: 0 },
-          className: "text-center py-20 bg-background-card/30 rounded-3xl border border-white/5 backdrop-blur-xl",
+          className: "surface-card rounded-3xl py-20 text-center backdrop-blur-xl",
           children: [
-            /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("div", { className: "w-16 h-16 mx-auto mb-4 rounded-2xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400", children: /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("i", { className: "fas fa-folder-open text-2xl" }, void 0, false, {
+            /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("div", { className: "mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl border border-accent-primary/20 bg-accent-primary/10 text-accent-primary", children: /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("i", { className: "fas fa-folder-open text-2xl" }, void 0, false, {
               fileName: "components/sections/Projects.tsx",
               lineNumber: 143,
               columnNumber: 15
@@ -8871,7 +9053,7 @@ function Projects() {
               "button",
               {
                 onClick: () => setActiveFilter("all"),
-                className: "mt-5 px-5 py-2.5 bg-purple-600 hover:bg-purple-500 text-white rounded-xl text-xs font-semibold shadow-lg shadow-purple-500/20 transition-all",
+                className: "mt-5 rounded-xl bg-accent-primary px-5 py-2.5 text-xs font-semibold text-white shadow-lg transition-all hover:-translate-y-0.5",
                 children: "Tampilkan Semua Proyek"
               },
               void 0,
@@ -8902,7 +9084,7 @@ function Projects() {
           viewport: { once: true },
           transition: { duration: 0.6, delay: 0.2 },
           className: "mt-16 text-center",
-          children: /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("div", { className: "inline-flex items-center gap-3 px-6 py-3 rounded-2xl bg-background-card/60 border border-white/10 backdrop-blur-md", children: [
+          children: /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("div", { className: "surface-card inline-flex flex-wrap items-center justify-center gap-3 rounded-2xl px-6 py-3 backdrop-blur-md", children: [
             /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("span", { className: "text-text-secondary text-sm", children: "Ingin melihat eksperimen & kode sumber lainnya?" }, void 0, false, {
               fileName: "components/sections/Projects.tsx",
               lineNumber: 165,
@@ -8914,7 +9096,7 @@ function Projects() {
                 href: "https://github.com/khrizki",
                 target: "_blank",
                 rel: "noopener noreferrer",
-                className: "inline-flex items-center gap-2 text-xs font-semibold text-purple-400 hover:text-purple-300 transition-colors",
+                className: "inline-flex items-center gap-2 text-xs font-semibold text-accent-primary transition-colors hover:text-accent-secondary",
                 children: [
                   /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("span", { children: "Lihat GitHub" }, void 0, false, {
                     fileName: "components/sections/Projects.tsx",
@@ -9027,7 +9209,7 @@ function Contact() {
           whileInView: { opacity: 1, y: 0 },
           viewport: { once: true },
           transition: { duration: 0.6 },
-          className: "flex flex-col items-center text-center mb-16 space-y-4",
+          className: "mb-16 flex flex-col items-center space-y-4 text-center sm:mb-20",
           children: [
             /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("div", { className: "eyebrow", children: [
               /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("i", { className: "fas fa-paper-plane text-xs text-purple-400" }, void 0, false, {
@@ -9045,7 +9227,7 @@ function Contact() {
               lineNumber: 64,
               columnNumber: 11
             }, this),
-            /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("h2", { className: "text-4xl sm:text-5xl lg:text-6xl font-extrabold text-text-primary tracking-[-.05em]", children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("h2", { className: "section-heading", children: [
               "Hubungi ",
               /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("span", { className: "gradient-text", children: "Saya" }, void 0, false, {
                 fileName: "components/sections/Contact.tsx",
@@ -9057,7 +9239,7 @@ function Contact() {
               lineNumber: 69,
               columnNumber: 11
             }, this),
-            /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("p", { className: "text-text-secondary text-base sm:text-lg max-w-2xl font-normal leading-relaxed", children: "Punya ide proyek menarik atau ingin berdiskusi lebih lanjut? Kirimkan pesan Anda dan mari ciptakan sesuatu yang luar biasa bersama." }, void 0, false, {
+            /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("p", { className: "section-copy max-w-2xl", children: "Punya ide proyek menarik atau ingin berdiskusi lebih lanjut? Kirimkan pesan Anda dan mari ciptakan sesuatu yang luar biasa bersama." }, void 0, false, {
               fileName: "components/sections/Contact.tsx",
               lineNumber: 73,
               columnNumber: 11
@@ -9081,7 +9263,7 @@ function Contact() {
             whileInView: { opacity: 1, x: 0 },
             viewport: { once: true },
             transition: { duration: 0.6 },
-            className: "lg:col-span-5 bg-background-card/40 border border-white/10 rounded-3xl p-8 backdrop-blur-xl space-y-8 relative overflow-hidden group",
+            className: "surface-card group relative space-y-8 overflow-hidden rounded-3xl p-8 backdrop-blur-xl lg:col-span-5",
             children: [
               /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("div", { className: "absolute -top-24 -right-24 w-48 h-48 bg-purple-500/10 rounded-full blur-2xl group-hover:bg-purple-500/20 transition-all duration-500" }, void 0, false, {
                 fileName: "components/sections/Contact.tsx",
@@ -9121,7 +9303,7 @@ function Contact() {
                   "div",
                   {
                     onClick: handleCopyEmail,
-                    className: "group/item flex items-center justify-between p-4 bg-white/[0.03] hover:bg-purple-500/10 border border-white/5 hover:border-purple-500/30 rounded-2xl cursor-pointer transition-all duration-300",
+                    className: "group/item flex cursor-pointer items-center justify-between rounded-2xl border border-border bg-background-tertiary/35 p-4 transition-all duration-300 hover:border-accent-primary hover:bg-accent-primary/10",
                     children: [
                       /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("div", { className: "flex items-center gap-4", children: [
                         /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("div", { className: "w-11 h-11 bg-purple-500/10 border border-purple-500/20 rounded-xl flex items-center justify-center text-purple-400 shrink-0 group-hover/item:scale-110 transition-transform", children: /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("i", { className: "fas fa-envelope text-lg" }, void 0, false, {
@@ -9174,7 +9356,7 @@ function Contact() {
                   "a",
                   {
                     href: `tel:${contact.phone}`,
-                    className: "group/item flex items-center gap-4 p-4 bg-white/[0.03] hover:bg-purple-500/10 border border-white/5 hover:border-purple-500/30 rounded-2xl transition-all duration-300",
+                    className: "group/item flex items-center gap-4 rounded-2xl border border-border bg-background-tertiary/35 p-4 transition-all duration-300 hover:border-accent-primary hover:bg-accent-primary/10",
                     children: [
                       /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("div", { className: "w-11 h-11 bg-purple-500/10 border border-purple-500/20 rounded-xl flex items-center justify-center text-purple-400 shrink-0 group-hover/item:scale-110 transition-transform", children: /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("i", { className: "fas fa-phone text-lg" }, void 0, false, {
                         fileName: "components/sections/Contact.tsx",
@@ -9212,7 +9394,7 @@ function Contact() {
                   },
                   this
                 ),
-                /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("div", { className: "flex items-center gap-4 p-4 bg-white/[0.03] border border-white/5 rounded-2xl", children: [
+                /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("div", { className: "flex items-center gap-4 rounded-2xl border border-border bg-background-tertiary/35 p-4", children: [
                   /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("div", { className: "w-11 h-11 bg-purple-500/10 border border-purple-500/20 rounded-xl flex items-center justify-center text-purple-400 shrink-0", children: /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("i", { className: "fas fa-map-marker-alt text-lg" }, void 0, false, {
                     fileName: "components/sections/Contact.tsx",
                     lineNumber: 146,
@@ -9248,7 +9430,7 @@ function Contact() {
                 lineNumber: 105,
                 columnNumber: 13
               }, this),
-              /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("div", { className: "pt-2 border-t border-white/5", children: [
+              /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("div", { className: "border-t border-border pt-2", children: [
                 /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("span", { className: "text-xs uppercase tracking-widest text-text-muted font-mono block mb-4", children: "Social Media" }, void 0, false, {
                   fileName: "components/sections/Contact.tsx",
                   lineNumber: 159,
@@ -9262,7 +9444,7 @@ function Contact() {
                     rel: "noopener noreferrer",
                     whileHover: { y: -3, scale: 1.08 },
                     whileTap: { scale: 0.95 },
-                    className: "w-11 h-11 bg-white/[0.03] border border-white/10 rounded-xl flex items-center justify-center text-text-secondary hover:text-white hover:border-purple-500/50 hover:bg-purple-500/20 hover:shadow-[0_0_15px_rgba(168,85,247,0.3)] transition-all duration-300",
+                    className: "flex h-11 w-11 items-center justify-center rounded-xl border border-border bg-background-tertiary/35 text-text-secondary transition-all duration-300 hover:border-accent-primary hover:bg-accent-primary hover:text-white hover:shadow-glow",
                     "aria-label": socialLink.label,
                     children: /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("i", { className: `${socialLink.icon} text-lg` }, void 0, false, {
                       fileName: "components/sections/Contact.tsx",
@@ -9306,7 +9488,7 @@ function Contact() {
             whileInView: { opacity: 1, x: 0 },
             viewport: { once: true },
             transition: { duration: 0.6 },
-            className: "lg:col-span-7 bg-background-card/40 border border-white/10 rounded-3xl p-8 backdrop-blur-xl relative",
+            className: "surface-card relative rounded-3xl p-8 backdrop-blur-xl lg:col-span-7",
             children: [
               /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("form", { onSubmit: handleSubmit, className: "space-y-6", children: [
                 /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("div", { className: "grid md:grid-cols-2 gap-6", children: [
@@ -9319,7 +9501,7 @@ function Contact() {
                         required: true,
                         value: formState.name,
                         onChange: (e) => setFormState({ ...formState, name: e.currentTarget.value }),
-                        className: "w-full px-4 py-4 bg-black/20 border border-white/10 rounded-2xl text-text-primary focus:border-purple-500 focus:ring-1 focus:ring-purple-500 outline-none transition-all peer text-sm",
+                        className: "input-field peer text-sm",
                         placeholder: " "
                       },
                       void 0,
@@ -9335,7 +9517,7 @@ function Contact() {
                       "label",
                       {
                         htmlFor: "name",
-                        className: "absolute left-4 top-4 text-text-muted text-sm pointer-events-none transition-all duration-200 peer-focus:-translate-y-7 peer-focus:text-xs peer-focus:text-purple-400 peer-not-placeholder-shown:-translate-y-7 peer-not-placeholder-shown:text-xs peer-not-placeholder-shown:text-purple-400",
+                        className: "pointer-events-none absolute left-4 top-4 text-sm text-text-muted transition-all duration-200 peer-focus:-translate-y-7 peer-focus:text-xs peer-focus:text-accent-primary peer-not-placeholder-shown:-translate-y-7 peer-not-placeholder-shown:text-xs peer-not-placeholder-shown:text-accent-primary",
                         children: "Nama Lengkap"
                       },
                       void 0,
@@ -9361,7 +9543,7 @@ function Contact() {
                         required: true,
                         value: formState.email,
                         onChange: (e) => setFormState({ ...formState, email: e.currentTarget.value }),
-                        className: "w-full px-4 py-4 bg-black/20 border border-white/10 rounded-2xl text-text-primary focus:border-purple-500 focus:ring-1 focus:ring-purple-500 outline-none transition-all peer text-sm",
+                        className: "input-field peer text-sm",
                         placeholder: " "
                       },
                       void 0,
@@ -9377,7 +9559,7 @@ function Contact() {
                       "label",
                       {
                         htmlFor: "email",
-                        className: "absolute left-4 top-4 text-text-muted text-sm pointer-events-none transition-all duration-200 peer-focus:-translate-y-7 peer-focus:text-xs peer-focus:text-purple-400 peer-not-placeholder-shown:-translate-y-7 peer-not-placeholder-shown:text-xs peer-not-placeholder-shown:text-purple-400",
+                        className: "pointer-events-none absolute left-4 top-4 text-sm text-text-muted transition-all duration-200 peer-focus:-translate-y-7 peer-focus:text-xs peer-focus:text-accent-primary peer-not-placeholder-shown:-translate-y-7 peer-not-placeholder-shown:text-xs peer-not-placeholder-shown:text-accent-primary",
                         children: "Alamat Email"
                       },
                       void 0,
@@ -9408,7 +9590,7 @@ function Contact() {
                       required: true,
                       value: formState.subject,
                       onChange: (e) => setFormState({ ...formState, subject: e.currentTarget.value }),
-                      className: "w-full px-4 py-4 bg-black/20 border border-white/10 rounded-2xl text-text-primary focus:border-purple-500 focus:ring-1 focus:ring-purple-500 outline-none transition-all peer text-sm",
+                      className: "input-field peer text-sm",
                       placeholder: " "
                     },
                     void 0,
@@ -9424,7 +9606,7 @@ function Contact() {
                     "label",
                     {
                       htmlFor: "subject",
-                      className: "absolute left-4 top-4 text-text-muted text-sm pointer-events-none transition-all duration-200 peer-focus:-translate-y-7 peer-focus:text-xs peer-focus:text-purple-400 peer-not-placeholder-shown:-translate-y-7 peer-not-placeholder-shown:text-xs peer-not-placeholder-shown:text-purple-400",
+                      className: "pointer-events-none absolute left-4 top-4 text-sm text-text-muted transition-all duration-200 peer-focus:-translate-y-7 peer-focus:text-xs peer-focus:text-accent-primary peer-not-placeholder-shown:-translate-y-7 peer-not-placeholder-shown:text-xs peer-not-placeholder-shown:text-accent-primary",
                       children: "Subjek Pesan"
                     },
                     void 0,
@@ -9450,7 +9632,7 @@ function Contact() {
                       required: true,
                       value: formState.message,
                       onChange: (e) => setFormState({ ...formState, message: e.currentTarget.value }),
-                      className: "w-full px-4 py-4 bg-black/20 border border-white/10 rounded-2xl text-text-primary focus:border-purple-500 focus:ring-1 focus:ring-purple-500 outline-none transition-all resize-none peer text-sm",
+                      className: "input-field peer resize-none text-sm",
                       placeholder: " "
                     },
                     void 0,
@@ -9466,7 +9648,7 @@ function Contact() {
                     "label",
                     {
                       htmlFor: "message",
-                      className: "absolute left-4 top-4 text-text-muted text-sm pointer-events-none transition-all duration-200 peer-focus:-translate-y-7 peer-focus:text-xs peer-focus:text-purple-400 peer-not-placeholder-shown:-translate-y-7 peer-not-placeholder-shown:text-xs peer-not-placeholder-shown:text-purple-400",
+                      className: "pointer-events-none absolute left-4 top-4 text-sm text-text-muted transition-all duration-200 peer-focus:-translate-y-7 peer-focus:text-xs peer-focus:text-accent-primary peer-not-placeholder-shown:-translate-y-7 peer-not-placeholder-shown:text-xs peer-not-placeholder-shown:text-accent-primary",
                       children: "Tuliskan Pesan Anda..."
                     },
                     void 0,
@@ -9704,4 +9886,4 @@ gsap/ScrollTrigger.js:
    * @author: Jack Doyle, jack@greensock.com
   *)
 */
-//# sourceMappingURL=/build/routes/_index-INYCB5W5.js.map
+//# sourceMappingURL=/build/routes/_index-7SV7H55S.js.map

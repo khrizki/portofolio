@@ -25,15 +25,15 @@ export default function Button({
   onClick,
 }: ButtonProps) {
   const baseStyles =
-    'group inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full font-bold text-sm tracking-[.01em] transition-all duration-300';
+    'group inline-flex items-center justify-center gap-2.5 rounded-xl border border-transparent px-5 py-3.5 text-sm font-bold tracking-[.01em] transition-all duration-300 sm:px-6';
 
   const variants = {
     primary:
-      'bg-gradient-to-r from-accent-primary to-accent-secondary text-white shadow-lg shadow-indigo-950/30 hover:shadow-glow hover:-translate-y-0.5',
+      'bg-gradient-to-r from-accent-primary via-[#7688ff] to-accent-secondary text-white shadow-[0_14px_30px_rgba(89,106,255,.25)] hover:-translate-y-0.5 hover:shadow-glow',
     secondary:
-      'bg-background-card/75 text-text-primary border border-border hover:border-border-hover hover:bg-background-tertiary hover:-translate-y-0.5',
+      'bg-background-card/75 text-text-primary border-border backdrop-blur-sm hover:-translate-y-0.5 hover:border-border-hover hover:bg-background-tertiary',
     outline:
-      'bg-transparent text-accent-primary border border-accent-primary hover:bg-accent-primary hover:text-white',
+      'bg-transparent border-accent-primary/60 text-accent-primary hover:bg-accent-primary hover:text-white',
   };
 
   const buttonContent = (

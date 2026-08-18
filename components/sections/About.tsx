@@ -28,7 +28,7 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="flex flex-col items-center text-center mb-16 space-y-4"
+          className="mb-16 flex flex-col items-center space-y-4 text-center sm:mb-20"
         >
           {/* Badge */}
           <div className="eyebrow">
@@ -36,11 +36,11 @@ export default function About() {
             <span>Biography</span>
           </div>
 
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-text-primary tracking-[-.05em]">
+          <h2 className="section-heading">
             Tentang <span className="gradient-text">Saya</span>
           </h2>
 
-          <p className="text-text-secondary text-base sm:text-lg max-w-2xl font-normal leading-relaxed">
+          <p className="section-copy max-w-2xl">
             Mengenal lebih dekat latar belakang, passion, dan pengalaman saya dalam mengembangkan perangkat lunak berkualitas.
           </p>
         </motion.div>
@@ -71,7 +71,7 @@ export default function About() {
               />
 
               {/* Glass Card Container */}
-              <div className="surface-card relative w-full h-full rounded-3xl p-6 backdrop-blur-xl flex flex-col items-center justify-center shadow-2xl overflow-hidden group">
+              <div className="surface-card group relative flex h-full w-full flex-col items-center justify-center overflow-hidden rounded-3xl p-6 shadow-2xl backdrop-blur-xl">
                 <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl bg-gradient-to-br from-purple-500/20 to-indigo-500/20 border border-purple-500/30 flex items-center justify-center text-purple-400 text-5xl sm:text-6xl mb-4 group-hover:scale-110 transition-transform duration-500">
                   <i className="fas fa-terminal" />
                 </div>
@@ -147,7 +147,7 @@ export default function About() {
               className="grid grid-cols-3 gap-3 sm:gap-6 py-2"
             >
               {/* Stat Item 1 */}
-              <div className="bg-background-card/40 border border-white/10 hover:border-purple-500/40 rounded-2xl p-4 text-center backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(168,85,247,0.2)]">
+              <div className="surface-card rounded-2xl p-4 text-center backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-accent-primary hover:shadow-glow">
                 <span
                   ref={years.elementRef}
                   className="block text-3xl sm:text-4xl lg:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-400 to-indigo-400"
@@ -160,7 +160,7 @@ export default function About() {
               </div>
 
               {/* Stat Item 2 */}
-              <div className="bg-background-card/40 border border-white/10 hover:border-purple-500/40 rounded-2xl p-4 text-center backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(168,85,247,0.2)]">
+              <div className="surface-card rounded-2xl p-4 text-center backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-accent-primary hover:shadow-glow">
                 <span
                   ref={projects.elementRef}
                   className="block text-3xl sm:text-4xl lg:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-400 to-indigo-400"
@@ -173,7 +173,7 @@ export default function About() {
               </div>
 
               {/* Stat Item 3 */}
-              <div className="bg-background-card/40 border border-white/10 hover:border-purple-500/40 rounded-2xl p-4 text-center backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(168,85,247,0.2)]">
+              <div className="surface-card rounded-2xl p-4 text-center backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-accent-primary hover:shadow-glow">
                 <span
                   ref={clients.elementRef}
                   className="block text-3xl sm:text-4xl lg:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-400 to-indigo-400"

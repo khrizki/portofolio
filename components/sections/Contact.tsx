@@ -58,7 +58,7 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="flex flex-col items-center text-center mb-16 space-y-4"
+          className="mb-16 flex flex-col items-center space-y-4 text-center sm:mb-20"
         >
           {/* Badge */}
           <div className="eyebrow">
@@ -66,11 +66,11 @@ export default function Contact() {
             <span>Get In Touch</span>
           </div>
 
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-text-primary tracking-[-.05em]">
+          <h2 className="section-heading">
             Hubungi <span className="gradient-text">Saya</span>
           </h2>
 
-          <p className="text-text-secondary text-base sm:text-lg max-w-2xl font-normal leading-relaxed">
+          <p className="section-copy max-w-2xl">
             Punya ide proyek menarik atau ingin berdiskusi lebih lanjut? Kirimkan pesan Anda dan mari ciptakan sesuatu yang luar biasa bersama.
           </p>
         </motion.div>
@@ -83,7 +83,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-5 bg-background-card/40 border border-white/10 rounded-3xl p-8 backdrop-blur-xl space-y-8 relative overflow-hidden group"
+            className="surface-card group relative space-y-8 overflow-hidden rounded-3xl p-8 backdrop-blur-xl lg:col-span-5"
           >
             {/* Inner Glow Decorative Effect */}
             <div className="absolute -top-24 -right-24 w-48 h-48 bg-purple-500/10 rounded-full blur-2xl group-hover:bg-purple-500/20 transition-all duration-500" />
@@ -106,7 +106,7 @@ export default function Contact() {
               {/* Email Tile with Quick Copy */}
               <div
                 onClick={handleCopyEmail}
-                className="group/item flex items-center justify-between p-4 bg-white/[0.03] hover:bg-purple-500/10 border border-white/5 hover:border-purple-500/30 rounded-2xl cursor-pointer transition-all duration-300"
+                className="group/item flex cursor-pointer items-center justify-between rounded-2xl border border-border bg-background-tertiary/35 p-4 transition-all duration-300 hover:border-accent-primary hover:bg-accent-primary/10"
               >
                 <div className="flex items-center gap-4">
                   <div className="w-11 h-11 bg-purple-500/10 border border-purple-500/20 rounded-xl flex items-center justify-center text-purple-400 shrink-0 group-hover/item:scale-110 transition-transform">
@@ -127,7 +127,7 @@ export default function Contact() {
               {/* Phone Tile */}
               <a
                 href={`tel:${contact.phone}`}
-                className="group/item flex items-center gap-4 p-4 bg-white/[0.03] hover:bg-purple-500/10 border border-white/5 hover:border-purple-500/30 rounded-2xl transition-all duration-300"
+                className="group/item flex items-center gap-4 rounded-2xl border border-border bg-background-tertiary/35 p-4 transition-all duration-300 hover:border-accent-primary hover:bg-accent-primary/10"
               >
                 <div className="w-11 h-11 bg-purple-500/10 border border-purple-500/20 rounded-xl flex items-center justify-center text-purple-400 shrink-0 group-hover/item:scale-110 transition-transform">
                   <i className="fas fa-phone text-lg" />
@@ -141,7 +141,7 @@ export default function Contact() {
               </a>
 
               {/* Location Tile */}
-              <div className="flex items-center gap-4 p-4 bg-white/[0.03] border border-white/5 rounded-2xl">
+              <div className="flex items-center gap-4 rounded-2xl border border-border bg-background-tertiary/35 p-4">
                 <div className="w-11 h-11 bg-purple-500/10 border border-purple-500/20 rounded-xl flex items-center justify-center text-purple-400 shrink-0">
                   <i className="fas fa-map-marker-alt text-lg" />
                 </div>
@@ -155,7 +155,7 @@ export default function Contact() {
             </div>
 
             {/* Social Links */}
-            <div className="pt-2 border-t border-white/5">
+            <div className="border-t border-border pt-2">
               <span className="text-xs uppercase tracking-widest text-text-muted font-mono block mb-4">
                 Social Media
               </span>
@@ -168,7 +168,7 @@ export default function Contact() {
                     rel="noopener noreferrer"
                     whileHover={{ y: -3, scale: 1.08 }}
                     whileTap={{ scale: 0.95 }}
-                    className="w-11 h-11 bg-white/[0.03] border border-white/10 rounded-xl flex items-center justify-center text-text-secondary hover:text-white hover:border-purple-500/50 hover:bg-purple-500/20 hover:shadow-[0_0_15px_rgba(168,85,247,0.3)] transition-all duration-300"
+                    className="flex h-11 w-11 items-center justify-center rounded-xl border border-border bg-background-tertiary/35 text-text-secondary transition-all duration-300 hover:border-accent-primary hover:bg-accent-primary hover:text-white hover:shadow-glow"
                     aria-label={socialLink.label}
                   >
                     <i className={`${socialLink.icon} text-lg`} />
@@ -184,7 +184,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-7 bg-background-card/40 border border-white/10 rounded-3xl p-8 backdrop-blur-xl relative"
+            className="surface-card relative rounded-3xl p-8 backdrop-blur-xl lg:col-span-7"
           >
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
@@ -197,12 +197,12 @@ export default function Contact() {
                     required
                     value={formState.name}
                     onChange={(e) => setFormState({ ...formState, name: e.currentTarget.value })}
-                    className="w-full px-4 py-4 bg-black/20 border border-white/10 rounded-2xl text-text-primary focus:border-purple-500 focus:ring-1 focus:ring-purple-500 outline-none transition-all peer text-sm"
+                    className="input-field peer text-sm"
                     placeholder=" "
                   />
                   <label
                     htmlFor="name"
-                    className="absolute left-4 top-4 text-text-muted text-sm pointer-events-none transition-all duration-200 peer-focus:-translate-y-7 peer-focus:text-xs peer-focus:text-purple-400 peer-not-placeholder-shown:-translate-y-7 peer-not-placeholder-shown:text-xs peer-not-placeholder-shown:text-purple-400"
+                    className="pointer-events-none absolute left-4 top-4 text-sm text-text-muted transition-all duration-200 peer-focus:-translate-y-7 peer-focus:text-xs peer-focus:text-accent-primary peer-not-placeholder-shown:-translate-y-7 peer-not-placeholder-shown:text-xs peer-not-placeholder-shown:text-accent-primary"
                   >
                     Nama Lengkap
                   </label>
@@ -216,12 +216,12 @@ export default function Contact() {
                     required
                     value={formState.email}
                     onChange={(e) => setFormState({ ...formState, email: e.currentTarget.value })}
-                    className="w-full px-4 py-4 bg-black/20 border border-white/10 rounded-2xl text-text-primary focus:border-purple-500 focus:ring-1 focus:ring-purple-500 outline-none transition-all peer text-sm"
+                    className="input-field peer text-sm"
                     placeholder=" "
                   />
                   <label
                     htmlFor="email"
-                    className="absolute left-4 top-4 text-text-muted text-sm pointer-events-none transition-all duration-200 peer-focus:-translate-y-7 peer-focus:text-xs peer-focus:text-purple-400 peer-not-placeholder-shown:-translate-y-7 peer-not-placeholder-shown:text-xs peer-not-placeholder-shown:text-purple-400"
+                    className="pointer-events-none absolute left-4 top-4 text-sm text-text-muted transition-all duration-200 peer-focus:-translate-y-7 peer-focus:text-xs peer-focus:text-accent-primary peer-not-placeholder-shown:-translate-y-7 peer-not-placeholder-shown:text-xs peer-not-placeholder-shown:text-accent-primary"
                   >
                     Alamat Email
                   </label>
@@ -236,12 +236,12 @@ export default function Contact() {
                   required
                   value={formState.subject}
                   onChange={(e) => setFormState({ ...formState, subject: e.currentTarget.value })}
-                  className="w-full px-4 py-4 bg-black/20 border border-white/10 rounded-2xl text-text-primary focus:border-purple-500 focus:ring-1 focus:ring-purple-500 outline-none transition-all peer text-sm"
+                  className="input-field peer text-sm"
                   placeholder=" "
                 />
                 <label
                   htmlFor="subject"
-                  className="absolute left-4 top-4 text-text-muted text-sm pointer-events-none transition-all duration-200 peer-focus:-translate-y-7 peer-focus:text-xs peer-focus:text-purple-400 peer-not-placeholder-shown:-translate-y-7 peer-not-placeholder-shown:text-xs peer-not-placeholder-shown:text-purple-400"
+                  className="pointer-events-none absolute left-4 top-4 text-sm text-text-muted transition-all duration-200 peer-focus:-translate-y-7 peer-focus:text-xs peer-focus:text-accent-primary peer-not-placeholder-shown:-translate-y-7 peer-not-placeholder-shown:text-xs peer-not-placeholder-shown:text-accent-primary"
                 >
                   Subjek Pesan
                 </label>
@@ -255,12 +255,12 @@ export default function Contact() {
                   required
                   value={formState.message}
                   onChange={(e) => setFormState({ ...formState, message: e.currentTarget.value })}
-                  className="w-full px-4 py-4 bg-black/20 border border-white/10 rounded-2xl text-text-primary focus:border-purple-500 focus:ring-1 focus:ring-purple-500 outline-none transition-all resize-none peer text-sm"
+                  className="input-field peer resize-none text-sm"
                   placeholder=" "
                 />
                 <label
                   htmlFor="message"
-                  className="absolute left-4 top-4 text-text-muted text-sm pointer-events-none transition-all duration-200 peer-focus:-translate-y-7 peer-focus:text-xs peer-focus:text-purple-400 peer-not-placeholder-shown:-translate-y-7 peer-not-placeholder-shown:text-xs peer-not-placeholder-shown:text-purple-400"
+                  className="pointer-events-none absolute left-4 top-4 text-sm text-text-muted transition-all duration-200 peer-focus:-translate-y-7 peer-focus:text-xs peer-focus:text-accent-primary peer-not-placeholder-shown:-translate-y-7 peer-not-placeholder-shown:text-xs peer-not-placeholder-shown:text-accent-primary"
                 >
                   Tuliskan Pesan Anda...
                 </label>

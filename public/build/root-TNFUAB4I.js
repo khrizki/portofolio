@@ -12,7 +12,7 @@ import {
   Scripts,
   ScrollRestoration,
   useLocation
-} from "/build/_shared/chunk-TEVHQX2B.js";
+} from "/build/_shared/chunk-R5QVEM6F.js";
 import {
   require_jsx_dev_runtime
 } from "/build/_shared/chunk-CBDF6H27.js";
@@ -588,15 +588,16 @@ function Navbar() {
   const [isHidden, setIsHidden] = (0, import_react2.useState)(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = (0, import_react2.useState)(false);
   const [activeSection, setActiveSection] = (0, import_react2.useState)("home");
-  const lastScrollY = (0, import_react2.useState)(0)[0];
+  const lastScrollY = (0, import_react2.useRef)(0);
   (0, import_react2.useEffect)(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+      if (currentScrollY > lastScrollY.current && currentScrollY > 120) {
         setIsHidden(true);
       } else {
         setIsHidden(false);
       }
+      lastScrollY.current = currentScrollY;
       setIsScrolled(currentScrollY > 50);
       const sections = document.querySelectorAll("section[id]");
       sections.forEach((section) => {
@@ -610,8 +611,9 @@ function Navbar() {
       });
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+  }, []);
   const handleNavClick = (e, href) => {
     e.preventDefault();
     const sectionId = href.replace("#", "");
@@ -621,195 +623,254 @@ function Navbar() {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(
     motion.nav,
     {
-      className: `fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-background-secondary/95 backdrop-blur-xl border-b border-border" : "bg-transparent"}`,
+      className: "fixed top-0 left-0 right-0 z-50 pointer-events-none",
       animate: { y: isHidden ? "-100%" : "0" },
       transition: { duration: 0.3 },
       children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("div", { className: "max-w-7xl mx-auto px-6 h-20 flex items-center justify-between", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(
-            "a",
-            {
-              href: "#home",
-              onClick: (e) => handleNavClick(e, "#home"),
-              className: "font-mono text-xl font-bold gradient-text",
-              children: "<Dev />"
-            },
-            void 0,
-            false,
-            {
-              fileName: "components/layout/Navbar.tsx",
-              lineNumber: 71,
-              columnNumber: 9
-            },
-            this
-          ),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("ul", { className: "hidden md:flex items-center gap-8", children: navLinks.map((link) => /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(
-            "a",
-            {
-              href: link.href,
-              onClick: (e) => handleNavClick(e, link.href),
-              className: `relative font-medium transition-colors ${activeSection === link.href.replace("#", "") ? "text-accent-primary" : "text-text-secondary hover:text-text-primary"}`,
-              children: [
-                link.name,
+        /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("div", { className: `max-w-7xl mx-auto px-4 sm:px-6 transition-all duration-300 ${isScrolled ? "pt-3" : "pt-2"}`, children: /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(
+          "div",
+          {
+            className: `pointer-events-auto h-[4.5rem] flex items-center justify-between transition-all duration-300 ${isScrolled ? "glass rounded-2xl px-4 sm:px-5 shadow-md" : "px-2 sm:px-3"}`,
+            children: [
+              /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(
+                "a",
+                {
+                  href: "#home",
+                  onClick: (e) => handleNavClick(e, "#home"),
+                  className: "group inline-flex items-center gap-2.5 text-text-primary",
+                  "aria-label": "Kembali ke beranda",
+                  children: [
+                    /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("span", { className: "grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-accent-primary to-accent-secondary font-mono text-sm font-extrabold text-white shadow-lg shadow-indigo-950/30 transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-105", children: "KR" }, void 0, false, {
+                      fileName: "components/layout/Navbar.tsx",
+                      lineNumber: 82,
+                      columnNumber: 13
+                    }, this),
+                    /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("span", { className: "hidden sm:block font-mono text-sm font-bold tracking-tight", children: [
+                      "khairul",
+                      /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("span", { className: "text-accent-secondary", children: ".dev" }, void 0, false, {
+                        fileName: "components/layout/Navbar.tsx",
+                        lineNumber: 84,
+                        columnNumber: 22
+                      }, this)
+                    ] }, void 0, true, {
+                      fileName: "components/layout/Navbar.tsx",
+                      lineNumber: 83,
+                      columnNumber: 13
+                    }, this)
+                  ]
+                },
+                void 0,
+                true,
+                {
+                  fileName: "components/layout/Navbar.tsx",
+                  lineNumber: 76,
+                  columnNumber: 11
+                },
+                this
+              ),
+              /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("ul", { className: "hidden md:flex items-center gap-1 rounded-full border border-transparent px-2 py-1", children: navLinks.map((link) => /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(
+                "a",
+                {
+                  href: link.href,
+                  onClick: (e) => handleNavClick(e, link.href),
+                  className: `relative rounded-full px-3 py-2 text-sm font-semibold transition-colors ${activeSection === link.href.replace("#", "") ? "text-text-primary" : "text-text-secondary hover:text-text-primary"}`,
+                  children: [
+                    activeSection === link.href.replace("#", "") && /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(
+                      motion.span,
+                      {
+                        layoutId: "activeNavigation",
+                        className: "absolute inset-0 -z-10 rounded-full bg-accent-primary/15 ring-1 ring-accent-primary/25",
+                        transition: { type: "spring", stiffness: 420, damping: 32 }
+                      },
+                      void 0,
+                      false,
+                      {
+                        fileName: "components/layout/Navbar.tsx",
+                        lineNumber: 102,
+                        columnNumber: 21
+                      },
+                      this
+                    ),
+                    link.name
+                  ]
+                },
+                void 0,
+                true,
+                {
+                  fileName: "components/layout/Navbar.tsx",
+                  lineNumber: 92,
+                  columnNumber: 17
+                },
+                this
+              ) }, link.href, false, {
+                fileName: "components/layout/Navbar.tsx",
+                lineNumber: 91,
+                columnNumber: 15
+              }, this)) }, void 0, false, {
+                fileName: "components/layout/Navbar.tsx",
+                lineNumber: 89,
+                columnNumber: 11
+              }, this),
+              /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("div", { className: "hidden md:flex items-center gap-3", children: [
                 /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(
-                  "span",
+                  "a",
                   {
-                    className: `absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-accent-primary to-accent-secondary transition-all duration-300 ${activeSection === link.href.replace("#", "") ? "w-full" : "w-0"}`
-                  },
-                  void 0,
-                  false,
-                  {
-                    fileName: "components/layout/Navbar.tsx",
-                    lineNumber: 93,
-                    columnNumber: 17
-                  },
-                  this
-                )
-              ]
-            },
-            void 0,
-            true,
-            {
-              fileName: "components/layout/Navbar.tsx",
-              lineNumber: 83,
-              columnNumber: 15
-            },
-            this
-          ) }, link.href, false, {
-            fileName: "components/layout/Navbar.tsx",
-            lineNumber: 82,
-            columnNumber: 13
-          }, this)) }, void 0, false, {
-            fileName: "components/layout/Navbar.tsx",
-            lineNumber: 80,
-            columnNumber: 9
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("div", { className: "hidden md:block", children: /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(ThemeToggle, {}, void 0, false, {
-            fileName: "components/layout/Navbar.tsx",
-            lineNumber: 107,
-            columnNumber: 11
-          }, this) }, void 0, false, {
-            fileName: "components/layout/Navbar.tsx",
-            lineNumber: 106,
-            columnNumber: 9
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(
-            "button",
-            {
-              className: "md:hidden flex flex-col gap-1.5 p-2",
-              onClick: () => setIsMobileMenuOpen(!isMobileMenuOpen),
-              "aria-label": "Toggle menu",
-              children: [
-                /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(
-                  motion.span,
-                  {
-                    animate: { rotate: isMobileMenuOpen ? 45 : 0, y: isMobileMenuOpen ? 8 : 0 },
-                    className: "w-6 h-0.5 bg-text-primary transition-all"
+                    href: "#contact",
+                    onClick: (e) => handleNavClick(e, "#contact"),
+                    className: "rounded-full bg-text-primary px-3.5 py-2 text-xs font-bold text-background-primary shadow-sm transition-transform hover:-translate-y-0.5",
+                    children: "Mari bicara"
                   },
                   void 0,
                   false,
                   {
                     fileName: "components/layout/Navbar.tsx",
                     lineNumber: 116,
-                    columnNumber: 11
+                    columnNumber: 13
                   },
                   this
                 ),
-                /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(
-                  motion.span,
-                  {
-                    animate: { opacity: isMobileMenuOpen ? 0 : 1 },
-                    className: "w-6 h-0.5 bg-text-primary transition-all"
-                  },
-                  void 0,
-                  false,
-                  {
+                /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(ThemeToggle, {}, void 0, false, {
+                  fileName: "components/layout/Navbar.tsx",
+                  lineNumber: 123,
+                  columnNumber: 13
+                }, this)
+              ] }, void 0, true, {
+                fileName: "components/layout/Navbar.tsx",
+                lineNumber: 115,
+                columnNumber: 11
+              }, this),
+              /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(
+                "button",
+                {
+                  className: "md:hidden grid h-10 w-10 place-items-center rounded-xl border border-border bg-background-card/60",
+                  onClick: () => setIsMobileMenuOpen(!isMobileMenuOpen),
+                  "aria-label": "Buka menu navigasi",
+                  "aria-expanded": isMobileMenuOpen,
+                  children: /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("span", { className: "flex flex-col gap-1.5", children: [
+                    /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(
+                      motion.span,
+                      {
+                        animate: { rotate: isMobileMenuOpen ? 45 : 0, y: isMobileMenuOpen ? 7 : 0 },
+                        className: "h-0.5 w-5 bg-text-primary transition-all"
+                      },
+                      void 0,
+                      false,
+                      {
+                        fileName: "components/layout/Navbar.tsx",
+                        lineNumber: 134,
+                        columnNumber: 15
+                      },
+                      this
+                    ),
+                    /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(
+                      motion.span,
+                      {
+                        animate: { opacity: isMobileMenuOpen ? 0 : 1 },
+                        className: "h-0.5 w-5 bg-text-primary transition-all"
+                      },
+                      void 0,
+                      false,
+                      {
+                        fileName: "components/layout/Navbar.tsx",
+                        lineNumber: 138,
+                        columnNumber: 15
+                      },
+                      this
+                    ),
+                    /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(
+                      motion.span,
+                      {
+                        animate: { rotate: isMobileMenuOpen ? -45 : 0, y: isMobileMenuOpen ? -7 : 0 },
+                        className: "h-0.5 w-5 bg-text-primary transition-all"
+                      },
+                      void 0,
+                      false,
+                      {
+                        fileName: "components/layout/Navbar.tsx",
+                        lineNumber: 142,
+                        columnNumber: 15
+                      },
+                      this
+                    )
+                  ] }, void 0, true, {
                     fileName: "components/layout/Navbar.tsx",
-                    lineNumber: 120,
-                    columnNumber: 11
-                  },
-                  this
-                ),
-                /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(
-                  motion.span,
-                  {
-                    animate: { rotate: isMobileMenuOpen ? -45 : 0, y: isMobileMenuOpen ? -8 : 0 },
-                    className: "w-6 h-0.5 bg-text-primary transition-all"
-                  },
-                  void 0,
-                  false,
-                  {
-                    fileName: "components/layout/Navbar.tsx",
-                    lineNumber: 124,
-                    columnNumber: 11
-                  },
-                  this
-                )
-              ]
-            },
-            void 0,
-            true,
-            {
-              fileName: "components/layout/Navbar.tsx",
-              lineNumber: 111,
-              columnNumber: 9
-            },
-            this
-          )
-        ] }, void 0, true, {
+                    lineNumber: 133,
+                    columnNumber: 13
+                  }, this)
+                },
+                void 0,
+                false,
+                {
+                  fileName: "components/layout/Navbar.tsx",
+                  lineNumber: 127,
+                  columnNumber: 11
+                },
+                this
+              )
+            ]
+          },
+          void 0,
+          true,
+          {
+            fileName: "components/layout/Navbar.tsx",
+            lineNumber: 68,
+            columnNumber: 9
+          },
+          this
+        ) }, void 0, false, {
           fileName: "components/layout/Navbar.tsx",
-          lineNumber: 69,
+          lineNumber: 67,
           columnNumber: 7
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(AnimatePresence, { children: isMobileMenuOpen && /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(
           motion.div,
           {
-            initial: { x: "-100%" },
-            animate: { x: 0 },
-            exit: { x: "-100%" },
-            transition: { type: "tween", duration: 0.3 },
-            className: "md:hidden fixed top-20 left-0 right-0 bg-background-secondary border-b border-border",
-            children: /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("ul", { className: "flex flex-col p-6 gap-4", children: [
+            initial: { opacity: 0, y: -12 },
+            animate: { opacity: 1, y: 0 },
+            exit: { opacity: 0, y: -12 },
+            transition: { type: "tween", duration: 0.2 },
+            className: "pointer-events-auto md:hidden mx-4 mt-2 rounded-2xl border border-border bg-background-secondary/95 p-2 shadow-lg backdrop-blur-xl",
+            children: /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("ul", { className: "flex flex-col gap-1 p-2", children: [
               navLinks.map((link) => /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(
                 "a",
                 {
                   href: link.href,
                   onClick: (e) => handleNavClick(e, link.href),
-                  className: `block font-medium py-2 border-b border-border last:border-0 transition-colors ${activeSection === link.href.replace("#", "") ? "text-accent-primary" : "text-text-secondary hover:text-text-primary"}`,
+                  className: `block rounded-xl px-4 py-3 text-sm font-semibold transition-colors ${activeSection === link.href.replace("#", "") ? "bg-accent-primary/12 text-accent-primary" : "text-text-secondary hover:bg-white/5 hover:text-text-primary"}`,
                   children: link.name
                 },
                 void 0,
                 false,
                 {
                   fileName: "components/layout/Navbar.tsx",
-                  lineNumber: 144,
+                  lineNumber: 164,
                   columnNumber: 19
                 },
                 this
               ) }, link.href, false, {
                 fileName: "components/layout/Navbar.tsx",
-                lineNumber: 143,
+                lineNumber: 163,
                 columnNumber: 17
               }, this)),
-              /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("li", { className: "pt-4 flex items-center gap-3", children: [
-                /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("span", { className: "text-sm font-medium text-text-secondary", children: "Theme" }, void 0, false, {
+              /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("li", { className: "mt-2 flex items-center justify-between border-t border-border px-3 pt-3", children: [
+                /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("span", { className: "text-xs font-bold uppercase tracking-widest text-text-muted", children: "Tampilan" }, void 0, false, {
                   fileName: "components/layout/Navbar.tsx",
-                  lineNumber: 158,
+                  lineNumber: 178,
                   columnNumber: 17
                 }, this),
                 /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(ThemeToggle, {}, void 0, false, {
                   fileName: "components/layout/Navbar.tsx",
-                  lineNumber: 159,
+                  lineNumber: 179,
                   columnNumber: 17
                 }, this)
               ] }, void 0, true, {
                 fileName: "components/layout/Navbar.tsx",
-                lineNumber: 157,
+                lineNumber: 177,
                 columnNumber: 15
               }, this)
             ] }, void 0, true, {
               fileName: "components/layout/Navbar.tsx",
-              lineNumber: 141,
+              lineNumber: 161,
               columnNumber: 13
             }, this)
           },
@@ -817,13 +878,13 @@ function Navbar() {
           false,
           {
             fileName: "components/layout/Navbar.tsx",
-            lineNumber: 134,
+            lineNumber: 154,
             columnNumber: 11
           },
           this
         ) }, void 0, false, {
           fileName: "components/layout/Navbar.tsx",
-          lineNumber: 132,
+          lineNumber: 152,
           columnNumber: 7
         }, this)
       ]
@@ -832,7 +893,7 @@ function Navbar() {
     true,
     {
       fileName: "components/layout/Navbar.tsx",
-      lineNumber: 60,
+      lineNumber: 62,
       columnNumber: 5
     },
     this
@@ -844,90 +905,92 @@ var import_jsx_dev_runtime5 = __toESM(require_jsx_dev_runtime());
 "use client";
 function Footer() {
   const currentYear = (/* @__PURE__ */ new Date()).getFullYear();
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("footer", { className: "bg-background-secondary border-t border-border py-10", children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "max-w-7xl mx-auto px-6", children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "flex flex-col items-center gap-3 text-center", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("a", { href: "#home", className: "font-mono text-sm font-bold gradient-text", children: "<KR />" }, void 0, false, {
-      fileName: "components/layout/Footer.tsx",
-      lineNumber: 10,
-      columnNumber: 11
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("p", { className: "text-text-muted text-sm", children: [
-      "\xA9 ",
-      currentYear,
-      " Khairul Rizky. Dibuat dengan",
-      " ",
-      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("span", { className: "text-red-500", children: "\u2764" }, void 0, false, {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("footer", { className: "border-t border-border bg-background-secondary/75 py-8 backdrop-blur-sm", children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "mx-auto flex max-w-7xl flex-col gap-6 px-5 sm:px-6 md:flex-row md:items-center md:justify-between", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "flex items-center justify-center gap-3 md:justify-start", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("a", { href: "#home", className: "grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-accent-primary to-accent-secondary font-mono text-xs font-extrabold text-white shadow-sm", "aria-label": "Kembali ke beranda", children: "KR" }, void 0, false, {
         fileName: "components/layout/Footer.tsx",
-        lineNumber: 13,
-        columnNumber: 13
+        lineNumber: 10,
+        columnNumber: 11
       }, this),
-      " dan",
-      " ",
-      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("span", { className: "text-amber-600", children: "\u2615" }, void 0, false, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("p", { className: "text-sm font-bold text-text-primary", children: "Khairul Rizky" }, void 0, false, {
+          fileName: "components/layout/Footer.tsx",
+          lineNumber: 12,
+          columnNumber: 13
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("p", { className: "text-xs text-text-muted", children: "Designed and developed with care." }, void 0, false, {
+          fileName: "components/layout/Footer.tsx",
+          lineNumber: 13,
+          columnNumber: 13
+        }, this)
+      ] }, void 0, true, {
         fileName: "components/layout/Footer.tsx",
-        lineNumber: 14,
-        columnNumber: 13
+        lineNumber: 11,
+        columnNumber: 11
       }, this)
     ] }, void 0, true, {
       fileName: "components/layout/Footer.tsx",
-      lineNumber: 11,
-      columnNumber: 11
+      lineNumber: 9,
+      columnNumber: 9
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("p", { className: "text-text-muted text-sm", children: "Designed & Developed by Khairul Rizky" }, void 0, false, {
-      fileName: "components/layout/Footer.tsx",
-      lineNumber: 16,
-      columnNumber: 11
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "flex items-center gap-2 mt-2", children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("span", { className: "text-xs text-text-muted", children: "Built with" }, void 0, false, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "flex flex-col items-center gap-3 text-center md:items-end md:text-right", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-xs font-medium text-text-muted md:justify-end", children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("span", { children: "Remix" }, void 0, false, {
+          fileName: "components/layout/Footer.tsx",
+          lineNumber: 18,
+          columnNumber: 13
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("span", { className: "text-border-hover", children: "\u2022" }, void 0, false, {
+          fileName: "components/layout/Footer.tsx",
+          lineNumber: 18,
+          columnNumber: 31
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("span", { children: "Tailwind CSS" }, void 0, false, {
+          fileName: "components/layout/Footer.tsx",
+          lineNumber: 19,
+          columnNumber: 13
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("span", { className: "text-border-hover", children: "\u2022" }, void 0, false, {
+          fileName: "components/layout/Footer.tsx",
+          lineNumber: 19,
+          columnNumber: 38
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("span", { children: "Framer Motion" }, void 0, false, {
+          fileName: "components/layout/Footer.tsx",
+          lineNumber: 20,
+          columnNumber: 13
+        }, this)
+      ] }, void 0, true, {
         fileName: "components/layout/Footer.tsx",
-        lineNumber: 20,
-        columnNumber: 13
+        lineNumber: 17,
+        columnNumber: 11
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("span", { className: "text-xs text-accent-primary", children: "Remix" }, void 0, false, {
-        fileName: "components/layout/Footer.tsx",
-        lineNumber: 21,
-        columnNumber: 13
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("span", { className: "text-text-muted", children: "\u2022" }, void 0, false, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("p", { className: "text-xs text-text-muted", children: [
+        "\xA9 ",
+        currentYear,
+        " Khairul Rizky. Dibuat dengan ",
+        /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("span", { className: "text-red-400", children: "\u2764" }, void 0, false, {
+          fileName: "components/layout/Footer.tsx",
+          lineNumber: 22,
+          columnNumber: 100
+        }, this),
+        " dan ",
+        /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("span", { className: "text-amber-500", children: "\u2615" }, void 0, false, {
+          fileName: "components/layout/Footer.tsx",
+          lineNumber: 22,
+          columnNumber: 144
+        }, this)
+      ] }, void 0, true, {
         fileName: "components/layout/Footer.tsx",
         lineNumber: 22,
-        columnNumber: 13
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("span", { className: "text-xs text-accent-secondary", children: "Tailwind CSS" }, void 0, false, {
-        fileName: "components/layout/Footer.tsx",
-        lineNumber: 23,
-        columnNumber: 13
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("span", { className: "text-text-muted", children: "\u2022" }, void 0, false, {
-        fileName: "components/layout/Footer.tsx",
-        lineNumber: 24,
-        columnNumber: 13
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("span", { className: "text-xs text-green-400", children: "GSAP" }, void 0, false, {
-        fileName: "components/layout/Footer.tsx",
-        lineNumber: 25,
-        columnNumber: 13
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("span", { className: "text-text-muted", children: "\u2022" }, void 0, false, {
-        fileName: "components/layout/Footer.tsx",
-        lineNumber: 26,
-        columnNumber: 13
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("span", { className: "text-xs text-blue-400", children: "Framer Motion" }, void 0, false, {
-        fileName: "components/layout/Footer.tsx",
-        lineNumber: 27,
-        columnNumber: 13
+        columnNumber: 11
       }, this)
     ] }, void 0, true, {
       fileName: "components/layout/Footer.tsx",
-      lineNumber: 19,
-      columnNumber: 11
+      lineNumber: 16,
+      columnNumber: 9
     }, this)
   ] }, void 0, true, {
-    fileName: "components/layout/Footer.tsx",
-    lineNumber: 9,
-    columnNumber: 9
-  }, this) }, void 0, false, {
     fileName: "components/layout/Footer.tsx",
     lineNumber: 8,
     columnNumber: 7
@@ -1111,7 +1174,7 @@ window.$RefreshReg$ = prevRefreshReg;
 window.$RefreshSig$ = prevRefreshSig;
 
 // app/styles/global.css?url
-var global_default = "/build/_assets/global-YC7FMU32.css?url";
+var global_default = "/build/_assets/global-DKU2FI6I.css?url";
 
 // app/root.tsx
 var import_jsx_dev_runtime8 = __toESM(require_jsx_dev_runtime());
@@ -1218,4 +1281,4 @@ export {
   App as default,
   links
 };
-//# sourceMappingURL=/build/root-3BD6IBJW.js.map
+//# sourceMappingURL=/build/root-TNFUAB4I.js.map
