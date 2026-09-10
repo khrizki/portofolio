@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { ReactNode } from 'react';
 
 interface ButtonProps {
-  variant?: 'primary' | 'secondary' | 'outline';
+  variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
   icon?: ReactNode;
   href?: string;
   children: ReactNode;
@@ -25,35 +25,40 @@ export default function Button({
   onClick,
 }: ButtonProps) {
   const baseStyles =
-    'group inline-flex items-center justify-center gap-2.5 rounded-xl border border-transparent px-5 py-3.5 text-sm font-bold tracking-[.01em] transition-all duration-300 sm:px-6';
+    'relative inline-flex items-center justify-center gap-2.5 rounded-xl px-6 py-3.5 text-sm font-bold tracking-[.01em] transition-all duration-300 select-none overflow-hidden';
 
   const variants = {
     primary:
-      'bg-gradient-to-r from-accent-primary via-[#7688ff] to-accent-secondary text-white shadow-[0_14px_30px_rgba(89,106,255,.25)] hover:-translate-y-0.5 hover:shadow-glow',
+      'bg-gradient-to-r from-indigo-500 via-purple-500 to-emerald-400 text-white shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:-translate-y-0.5 active:translate-y-0',
     secondary:
-      'bg-background-card/75 text-text-primary border-border backdrop-blur-sm hover:-translate-y-0.5 hover:border-border-hover hover:bg-background-tertiary',
+      'surface-card text-text-primary hover:border-accent-primary/60 hover:-translate-y-0.5 active:translate-y-0',
     outline:
-      'bg-transparent border-accent-primary/60 text-accent-primary hover:bg-accent-primary hover:text-white',
+      'border border-indigo-500/50 bg-indigo-500/10 text-indigo-300 hover:bg-indigo-500/20 hover:border-indigo-400 hover:-translate-y-0.5',
+    ghost:
+      'text-text-secondary hover:text-text-primary hover:bg-white/5',
   };
 
   const buttonContent = (
     <>
-      {children}
-      {icon && <span>{icon}</span>}
+      <span className="relative z-10 flex items-center gap-2.5">
+        {children}
+        {icon && <span className="transition-transform group-hover:translate-x-0.5">{icon}</span>}
+      </span>
+      {variant === 'primary' && (
+        <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-shimmer" />
+      )}
     </>
   );
 
   const motionProps = {
-    whileHover: { scale: 1.02 },
     whileTap: { scale: 0.98 },
-    transition: { duration: 0.2 },
   };
 
   if (href) {
     return (
       <motion.a
         href={href}
-        className={`${baseStyles} ${variants[variant]} ${className}`}
+        className={`group ${baseStyles} ${variants[variant]} ${className}`}
         {...motionProps}
       >
         {buttonContent}
@@ -66,7 +71,7 @@ export default function Button({
       type={type}
       disabled={disabled}
       onClick={onClick}
-      className={`${baseStyles} ${variants[variant]} ${className}`}
+      className={`group ${baseStyles} ${variants[variant]} ${disabled ? 'opacity-60 cursor-not-allowed' : ''} ${className}`}
       {...motionProps}
     >
       {buttonContent}

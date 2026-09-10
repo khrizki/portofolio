@@ -14,11 +14,6 @@ export default function Footer() {
           </div>
         </div>
         <div className="flex flex-col items-center gap-3 text-center md:items-end md:text-right">
-          <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-xs font-medium text-text-muted md:justify-end">
-            <span>Remix</span><span className="text-border-hover">•</span>
-            <span>Tailwind CSS</span><span className="text-border-hover">•</span>
-            <span>Framer Motion</span>
-          </div>
           <p className="text-xs text-text-muted">&copy; {currentYear} Khairul Rizky. Dibuat dengan <span className="text-red-400">❤</span> dan <span className="text-amber-500">☕</span></p>
         </div>
       </div>

@@ -38,6 +38,14 @@ export interface SocialLink {
   label: string;
 }
 
+export interface Experience {
+  period: string;
+  role: string;
+  company: string;
+  description: string;
+  technologies: string[];
+}
+
 export interface PortfolioData {
   hero: {
     name: string;
@@ -54,6 +62,7 @@ export interface PortfolioData {
     role: string;
     paragraphs: string[];
   };
+  experience: Experience[];
   contact: ContactInfo;
   social: SocialLink[];
 }

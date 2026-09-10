@@ -49,7 +49,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       viewport={{ once: true, margin: '-50px' }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       whileHover={{ y: -8 }}
-      className="surface-card group relative flex h-full flex-col overflow-hidden rounded-[1.45rem] transition-all duration-300 hover:border-accent-primary hover:shadow-glow"
+      className="surface-card group relative flex h-full flex-col overflow-hidden rounded-[1.45rem] transition-all duration-500 hover:-translate-y-2 hover:border-accent-primary hover:shadow-glow animate-tilt"
       data-category={project.category}
     >
       {/* Product-like preview that works without a stock image. */}
